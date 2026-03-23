@@ -1,0 +1,40 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-23T01:06:11.315Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-23T01:06:11.309Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "env": {
+    "vars": {
+      "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY_HERE",
+      "MATON_API_KEY": "YOUR_MATON_API_KEY_HERE"
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": ["*"],
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "YOUR_GATEWAY_TOKEN_HERE"
+    }
+  }
+}

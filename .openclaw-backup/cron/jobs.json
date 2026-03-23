@@ -1,0 +1,89 @@
+{
+  "version": 1,
+  "jobs": [
+    {
+      "id": "15c7fd55-9e4b-4ecf-b146-df7ae02dc6ba",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "daily-git-backup",
+      "enabled": true,
+      "createdAtMs": 1774244760425,
+      "updatedAtMs": 1774244760425,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "main",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "systemEvent",
+        "text": "Daily Git backup: commit and push workspace changes to GitHub. Run: cd /home/tenbox/.openclaw/workspace && git add -A && git commit -m \"Backup $(date +%Y-%m-%d)\" && git push origin master"
+      },
+      "state": {
+        "nextRunAtMs": 1774314000000
+      }
+    },
+    {
+      "id": "5c1cfd16-e88e-4c11-89fc-9cf5b754496f",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "daily-backup-9am",
+      "enabled": true,
+      "createdAtMs": 1774244976003,
+      "updatedAtMs": 1774244976003,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 9 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行以下备份任务：\n1. 进入工作目录 /home/tenbox/.openclaw/workspace\n2. 执行 git add -A\n3. 执行 git commit -m \"Daily backup: $(date '+%Y-%m-%d %H:%M')\"\n4. 执行 git push origin master\n5. 报告备份结果",
+        "model": "custom-coding-dashscope-aliyuncs-com/kimi-k2.5"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1774314000000
+      }
+    },
+    {
+      "id": "d090f74d-cc4b-45f4-be3d-6cae51176f65",
+      "agentId": "main",
+      "sessionKey": "agent:main:main",
+      "name": "daily-backup-4pm",
+      "enabled": true,
+      "createdAtMs": 1774244976014,
+      "updatedAtMs": 1774252842848,
+      "schedule": {
+        "kind": "cron",
+        "expr": "0 16 * * *",
+        "tz": "Asia/Shanghai"
+      },
+      "sessionTarget": "isolated",
+      "wakeMode": "now",
+      "payload": {
+        "kind": "agentTurn",
+        "message": "请执行以下备份任务：\n1. 进入工作目录 /home/tenbox/.openclaw/workspace\n2. 执行 git add -A\n3. 执行 git commit -m \"Daily backup: $(date '+%Y-%m-%d %H:%M')\"\n4. 执行 git push origin master\n5. 报告备份结果",
+        "model": "custom-coding-dashscope-aliyuncs-com/kimi-k2.5"
+      },
+      "delivery": {
+        "mode": "announce"
+      },
+      "state": {
+        "nextRunAtMs": 1774339200000,
+        "lastRunAtMs": 1774252800006,
+        "lastRunStatus": "error",
+        "lastStatus": "error",
+        "lastDurationMs": 42842,
+        "lastError": "Channel is required when multiple channels are configured: dingtalk, qqbot Set delivery.channel explicitly or use a main session with a previous channel.",
+        "lastDeliveryStatus": "unknown",
+        "consecutiveErrors": 1
+      }
+    }
+  ]
+}

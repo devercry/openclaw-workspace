@@ -22,7 +22,7 @@
     "providers": {
       "tenbox": {
         "baseUrl": "http://10.0.2.3/v1",
-        "apiKey": "tenbox",
+        "apiKey": "YOUR_API_KEY_HERE",
         "api": "openai-completions",
         "models": [
           {
@@ -39,9 +39,7 @@
             "id": "glm-5",
             "name": "GLM-5",
             "reasoning": true,
-            "input": [
-              "text"
-            ],
+            "input": ["text"],
             "cost": {
               "input": 0,
               "output": 0,
@@ -55,9 +53,7 @@
             "id": "glm-4.7",
             "name": "GLM-4.7",
             "reasoning": true,
-            "input": [
-              "text"
-            ],
+            "input": ["text"],
             "cost": {
               "input": 0,
               "output": 0,
@@ -71,9 +67,7 @@
             "id": "glm-4.7-flash",
             "name": "GLM-4.7 Flash",
             "reasoning": true,
-            "input": [
-              "text"
-            ],
+            "input": ["text"],
             "cost": {
               "input": 0,
               "output": 0,
@@ -87,9 +81,7 @@
             "id": "glm-4.7-flashx",
             "name": "GLM-4.7 FlashX",
             "reasoning": true,
-            "input": [
-              "text"
-            ],
+            "input": ["text"],
             "cost": {
               "input": 0,
               "output": 0,
@@ -103,16 +95,14 @@
       },
       "custom-coding-dashscope-aliyuncs-com": {
         "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
-        "apiKey": "sk-sp-0d77815efb7e4c81b95184598ea25f3a",
+        "apiKey": "YOUR_DASHSCOPE_API_KEY_HERE",
         "api": "openai-completions",
         "models": [
           {
             "id": "kimi-k2.5",
             "name": "kimi-k2.5 (Custom Provider)",
             "reasoning": false,
-            "input": [
-              "text"
-            ],
+            "input": ["text"],
             "cost": {
               "input": 0,
               "output": 0,
@@ -152,23 +142,21 @@
   },
   "env": {
     "vars": {
-      "TAVILY_API_KEY": "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",
-      "MATON_API_KEY": "dZpIOhPMf9KahxxPSxBTTwff44heqZCyJZL8hSqV2CDivXdo2cCKSusiYPU3HDGBvBmxRaLT8Hwd4dxfc9yliAoIgGpwDEmBGIA"
+      "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY_HERE",
+      "MATON_API_KEY": "YOUR_MATON_API_KEY_HERE"
     }
   },
   "gateway": {
     "mode": "local",
     "bind": "lan",
     "controlUi": {
-      "allowedOrigins": [
-        "*"
-      ],
+      "allowedOrigins": ["*"],
       "allowInsecureAuth": true,
       "dangerouslyDisableDeviceAuth": true
     },
     "auth": {
       "mode": "token",
-      "token": "tenbox"
+      "token": "YOUR_GATEWAY_TOKEN_HERE"
     }
   }
 }

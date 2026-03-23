@@ -30,6 +30,12 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=api-gateway",
       "source": "skillhub",
       "version": "1.0.54"
+    },
+    "qqbot": {
+      "name": "qqbot",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=qqbot",
+      "source": "skillhub",
+      "version": ""
     }
   }
 }

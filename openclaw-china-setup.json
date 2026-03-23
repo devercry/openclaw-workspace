@@ -1,0 +1,65 @@
+{
+  "_comment": "OpenClaw 中国本地化配置 - 针对国内网络环境优化",
+  "gateway": {
+    "bind": "127.0.0.1",
+    "port": 8080,
+    "publicUrl": "",
+    "logLevel": "info"
+  },
+  "channels": {
+    "feishu": {
+      "enabled": true,
+      "domain": "feishu",
+      "connectionMode": "websocket",
+      "dmPolicy": "pairing",
+      "groupPolicy": "open",
+      "typingIndicator": false,
+      "resolveSenderNames": true,
+      "streaming": true,
+      "blockStreaming": true,
+      "textChunkLimit": 2000,
+      "mediaMaxMb": 30,
+      "defaultAccount": "main",
+      "accounts": {
+        "main": {
+          "appId": "YOUR_APP_ID_HERE",
+          "appSecret": "YOUR_APP_SECRET_HERE",
+          "botName": "AI 助手"
+        }
+      }
+    },
+    "webchat": {
+      "enabled": true,
+      "bind": "127.0.0.1:8081",
+      "dmPolicy": "open"
+    }
+  },
+  "agents": {
+    "default": "main",
+    "list": [
+      {
+        "id": "main",
+        "model": "custom-coding-dashscope-aliyuncs-com/kimi-k2.5",
+        "systemPrompt": "你是一个有用的 AI 助手。请用中文回答用户的问题。"
+      }
+    ]
+  },
+  "llm": {
+    "providers": [
+      {
+        "id": "dashscope",
+        "name": "阿里云百炼",
+        "baseUrl": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+        "apiKey": "YOUR_DASHSCOPE_API_KEY_HERE",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "Kimi K2.5",
+            "maxTokens": 8192
+          }
+        ]
+      }
+    ]
+  },
+  "bindings": []
+}

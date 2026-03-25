@@ -1,0 +1,145 @@
+{
+  "name": "精密仪器公司",
+  "short_name": "精密仪器",
+  "description": "专业精密仪器制造商 - 提供高精度测量设备、实验室仪器及工业自动化解决方案",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#ffffff",
+  "theme_color": "#2563eb",
+  "orientation": "portrait-primary",
+  "scope": "/",
+  "lang": "zh-CN",
+  "dir": "ltr",
+  "categories": ["business", "manufacturing", "technology"],
+  "icons": [
+    {
+      "src": "assets/icons/icon-72x72.png",
+      "sizes": "72x72",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-96x96.png",
+      "sizes": "96x96",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-128x128.png",
+      "sizes": "128x128",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-144x144.png",
+      "sizes": "144x144",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-152x152.png",
+      "sizes": "152x152",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-192x192.png",
+      "sizes": "192x192",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-384x384.png",
+      "sizes": "384x384",
+      "type": "image/png",
+      "purpose": "maskable any"
+    },
+    {
+      "src": "assets/icons/icon-512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable any"
+    }
+  ],
+  "screenshots": [
+    {
+      "src": "assets/screenshots/home-mobile.png",
+      "sizes": "414x896",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "首页 - 移动端"
+    },
+    {
+      "src": "assets/screenshots/products-mobile.png",
+      "sizes": "414x896",
+      "type": "image/png",
+      "form_factor": "narrow",
+      "label": "产品页 - 移动端"
+    },
+    {
+      "src": "assets/screenshots/home-desktop.png",
+      "sizes": "1920x1080",
+      "type": "image/png",
+      "form_factor": "wide",
+      "label": "首页 - 桌面端"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "产品中心",
+      "short_name": "产品",
+      "description": "浏览我们的精密仪器产品",
+      "url": "/products.html",
+      "icons": [
+        {
+          "src": "assets/icons/products-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "联系我们",
+      "short_name": "联系",
+      "description": "获取支持和咨询服务",
+      "url": "/contact.html",
+      "icons": [
+        {
+          "src": "assets/icons/contact-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    },
+    {
+      "name": "关于我们",
+      "short_name": "关于",
+      "description": "了解公司背景和发展历程",
+      "url": "/about.html",
+      "icons": [
+        {
+          "src": "assets/icons/about-96x96.png",
+          "sizes": "96x96"
+        }
+      ]
+    }
+  ],
+  "related_applications": [],
+  "prefer_related_applications": false,
+  "display_override": ["standalone", "minimal-ui", "browser"],
+  "edge_side_panel": {
+    "preferred_width": 400
+  },
+  "handle_links": "preferred",
+  "launch_handler": {
+    "client_mode": ["navigate-existing", "auto"]
+  },
+  "share_target": {
+    "action": "/share",
+    "method": "POST",
+    "enctype": "multipart/form-data",
+    "params": {
+      "title": "title",
+      "text": "text",
+      "url": "url"
+    }
+  }
+}

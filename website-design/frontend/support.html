@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>技术支持 - 精密仪器科技有限公司</title>
+  <meta name="description" content="获取精密仪器科技有限公司的技术支持、常见问题解答、软件下载和售后服务">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo">精</div>
+        <span>精密仪器</span>
+      </a>
+      <div class="navbar-nav" id="navbarNav">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="news.html">新闻中心</a>
+        <a href="about.html">关于我们</a>
+        <a href="support.html" class="active">技术支持</a>
+        <a href="contact.html">联系我们</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="搜索支持内容...">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 页面标题区 -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">技术支持</h1>
+      <p class="page-subtitle">Technical Support</p>
+      <nav class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">技术支持</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 快速入口 -->
+  <section class="section support-quick-links">
+    <div class="container">
+      <div class="quick-links-grid">
+        <a href="#faq" class="quick-link-card">
+          <div class="quick-link-icon"><i class="fas fa-question-circle"></i></div>
+          <h4>常见问题</h4>
+          <p>快速找到您的问题答案</p>
+        </a>
+        <a href="#downloads" class="quick-link-card">
+          <div class="quick-link-icon"><i class="fas fa-download"></i></div>
+          <h4>下载中心</h4>
+          <p>软件、驱动、手册下载</p>
+        </a>
+        <a href="#service" class="quick-link-card">
+          <div class="quick-link-icon"><i class="fas fa-tools"></i></div>
+          <h4>售后服务</h4>
+          <p>维修、保养、校准服务</p>
+        </a>
+        <a href="#repair" class="quick-link-card">
+          <div class="quick-link-icon"><i class="fas fa-wrench"></i></div>
+          <h4>维修申请</h4>
+          <p>在线提交维修申请</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- FAQ -->
+  <section class="section section-alt faq-section" id="faq">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">常见问题</h2>
+        <p class="section-subtitle">FAQ</p>
+      </div>
+      
+      <!-- FAQ 分类 -->
+      <div class="faq-categories">
+        <button class="faq-category-btn active" data-category="general">通用问题</button>
+        <button class="faq-category-btn" data-category="product">产品使用</button>
+        <button class="faq-category-btn" data-category="software">软件操作</button>
+        <button class="faq-category-btn" data-category="maintenance">维护保养</button>
+      </div>
+
+      <!-- FAQ 列表 -->
+      <div class="faq-list">
+        <div class="faq-item active">
+          <div class="faq-question">
+            <h4>如何获取产品的技术支持和售后服务？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>您可以通过以下方式获取技术支持：1）拨打24小时服务热线400-888-9999；2）发送邮件至support@precision.com；3）通过官网在线客服系统提交问题；4）联系当地授权服务商。我们的技术工程师将在2小时内响应您的需求。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>产品的保修期是多长时间？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>精密仪器科技所有产品均提供标准12个月质保服务。对于核心部件（如测量系统、控制系统），我们提供24个月延长保修。购买延保服务后，可享受最长60个月的全面保修。具体保修条款请参考产品保修卡或联系客服咨询。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>如何进行设备的定期校准？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>建议每12个月进行一次专业校准。您可以通过以下方式预约校准服务：1）拨打服务热线预约；2）在官网提交校准申请；3）联系当地服务商。我们的校准工程师将携带标准器上门为您服务，校准完成后提供校准证书。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>测量软件支持哪些CAD格式导入？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>我们的测量软件支持主流CAD格式导入，包括：IGES、STEP、STL、CATIA、Pro/E、UG/NX、SolidWorks、AutoCAD等。支持直接读取CAD模型中的PMI信息，自动生成测量程序，大幅提升测量效率。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>设备对环境温湿度有什么要求？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>为保证测量精度，建议设备运行环境：温度18-22°C，温度变化率≤1°C/h；相对湿度40-60%。设备应安装在防振地基上，远离冲床、大型设备等振动源。如环境条件无法满足，建议配置精密空调和减振装置。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>如何升级测量软件到最新版本？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>软件升级方式：1）登录官网下载中心下载最新版本安装包；2）通过软件内置的"检查更新"功能自动升级；3）联系技术支持获取升级包。建议在升级前备份现有测量程序和配置。购买软件升级服务的客户可享受免费升级。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>设备出现故障如何报修？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>报修流程：1）拨打24小时服务热线400-888-9999；2）通过官网在线提交维修申请；3）联系当地服务商。报修时请提供设备型号、序列号、故障现象等信息。我们的工程师将在2小时内响应，一般故障24小时内上门，重大故障48小时内解决。</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <div class="faq-question">
+            <h4>是否提供操作培训服务？</h4>
+            <i class="fas fa-chevron-down"></i>
+          </div>
+          <div class="faq-answer">
+            <p>是的，我们提供全面的培训服务：1）设备交付时的现场操作培训；2）定期举办的公开培训课程；3）定制化企业内训；4）在线视频教程。培训内容包括设备操作、软件使用、维护保养、故障排除等。购买设备的客户可享受免费基础培训。</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 下载中心 -->
+  <section class="section downloads-section" id="downloads">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">下载中心</h2>
+        <p class="section-subtitle">软件、驱动、手册等资源下载</p>
+      </div>
+
+      <div class="downloads-tabs">
+        <div class="downloads-tab-header">
+          <button class="download-tab-btn active" data-tab="software">软件</button>
+          <button class="download-tab-btn" data-tab="driver">驱动程序</button>
+          <button class="download-tab-btn" data-tab="manual">用户手册</button>
+          <button class="download-tab-btn" data-tab="firmware">固件</button>
+        </div>
+
+        <
+div class="downloads-tab-content">
+          <!-- 软件 -->
+          <div class="download-tab-panel active" id="software">
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-code"></i></div>
+                <div class="download-info">
+                  <h4>PrecisionMeasure V5.0</h4>
+                  <p>最新版测量软件 | 支持Win10/11 | 2.1 GB</p>
+                  <span class="download-version">版本：5.0.2</span>
+                  <span class="download-date">更新：2024-03-15</span>
+                </div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-code"></i></div>
+                <div class="download-info">
+                  <h4>PrecisionMeasure V4.8</h4>
+                  <p>稳定版测量软件 | 支持Win7/10 | 1.8 GB</p>
+                  <span class="download-version">版本：4.8.5</span>
+                  <span class="download-date">更新：2023-12-20</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-code"></i></div>
+                <div class="download-info">
+                  <h4>数据分析工具包</h4>
+                  <p>测量数据分析插件 | 256 MB</p>
+                  <span class="download-version">版本：2.3.1</span>
+                  <span class="download-date">更新：2024-02-10</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-mobile-alt"></i></div>
+                <div class="download-info">
+                  <h4>移动监控APP</h4>
+                  <p>iOS/Android | 85 MB</p>
+                  <span class="download-version">版本：3.2.0</span>
+                  <span class="download-date">更新：2024-01-25</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 驱动程序 -->
+          <div class="download-tab-panel" id="driver">
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-microchip"></i></div>
+                <div class="download-info">
+                  <h4>控制器驱动程序</h4>
+                  <p>适用于PMX系列 | 128 MB</p>
+                  <span class="download-version">版本：3.5.2</span>
+                  <span class="download-date">更新：2024-03-01</span>
+                </div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-usb"></i></div>
+                <div class="download-info">
+                  <h4>USB接口驱动</h4>
+                  <p>通用USB驱动 | 15 MB</p>
+                  <span class="download-version">版本：2.1.0</span>
+                  <span class="download-date">更新：2023-11-15</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-network-wired"></i></div>
+                <div class="download-info">
+                  <h4>网卡驱动程序</h4>
+                  <p>适用于工业以太网 | 25 MB</p>
+                  <span class="download-version">版本：1.8.3</span>
+                  <span class="download-date">更新：2023-10-20</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 用户手册 -->
+          <div class="download-tab-panel" id="manual">
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="download-info">
+                  <h4>PMX-9000用户手册</h4>
+                  <p>完整操作指南 | PDF | 15.8 MB</p>
+                  <span class="download-date">更新：2024-03-10</span>
+                </div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="download-info">
+                  <h4>软件操作手册</h4>
+                  <p>PrecisionMeasure使用指南 | PDF | 8.5 MB</p>
+                  <span class="download-date">更新：2024-02-28</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-file-pdf"></i></div>
+                <div class="download-info">
+                  <h4>维护保养手册</h4>
+                  <p>设备保养指南 | PDF | 3.2 MB</p>
+                  <span class="download-date">更新：2024-01-15</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-video"></i></div>
+                <div class="download-info">
+                  <h4>操作培训视频</h4>
+                  <p>完整视频教程 | MP4 | 1.5 GB</p>
+                  <span class="download-date">更新：2024-02-01</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+            </div>
+          </div>
+
+          <!-- 固件 -->
+          <div class="download-tab-panel" id="firmware">
+            <div class="download-list">
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-microchip"></i></div>
+                <div class="download-info">
+                  <h4>控制器固件 V3.2</h4>
+                  <p>最新固件版本 | 85 MB</p>
+                  <span class="download-version">版本：3.2.1</span>
+                  <span class="download-date">更新：2024-03-05</span>
+                </div>
+                <a href="#" class="btn btn-primary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+              <div class="download-item">
+                <div class="download-icon"><i class="fas fa-microchip"></i></div>
+                <div class="download-info">
+                  <h4>测头固件 V2.5</h4>
+                  <p>适用于TP/SP系列测头 | 12 MB</p>
+                  <span class="download-version">版本：2.5.0</span>
+                  <span class="download-date">更新：2024-02-20</span>
+                </div>
+                <a href="#" class="btn btn-secondary"><i class="fas fa-download"></i> 下载</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 售后服务 -->
+  <section class="section section-alt service-section" id="service">
+    <div class="container">
+      <div class="section-header">
+        <h2 class="section-title">售后服务</h2>
+        <p class="section-subtitle">专业团队，全程保障</p>
+      </div>
+      <div class="service-grid">
+        <div class="service-card">
+          <div class="service-icon"><i

@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>联系我们 - 精密仪器科技有限公司</title>
+  <meta name="description" content="联系精密仪器科技有限公司，获取产品咨询、技术支持和售后服务">
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/responsive.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+  <!-- 导航栏 -->
+  <nav class="navbar">
+    <div class="navbar-container">
+      <a href="index.html" class="navbar-brand">
+        <div class="navbar-logo">精</div>
+        <span>精密仪器</span>
+      </a>
+      <div class="navbar-nav" id="navbarNav">
+        <a href="index.html">首页</a>
+        <a href="products.html">产品中心</a>
+        <a href="solutions.html">解决方案</a>
+        <a href="news.html">新闻中心</a>
+        <a href="about.html">关于我们</a>
+        <a href="support.html">技术支持</a>
+        <a href="contact.html" class="active">联系我们</a>
+      </div>
+      <div class="navbar-actions">
+        <div class="search-box">
+          <input type="text" class="search-input" placeholder="搜索...">
+          <button class="search-btn"><i class="fas fa-search"></i></button>
+        </div>
+        <button class="theme-toggle" id="themeToggle"><i class="fas fa-moon"></i></button>
+        <button class="navbar-toggle" id="navbarToggle"><span></span><span></span><span></span></button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- 页面标题区 -->
+  <section class="page-header">
+    <div class="container">
+      <h1 class="page-title">联系我们</h1>
+      <p class="page-subtitle">Contact Us</p>
+      <nav class="breadcrumb">
+        <a href="index.html">首页</a>
+        <span class="breadcrumb-separator">/</span>
+        <span class="breadcrumb-current">联系我们</span>
+      </nav>
+    </div>
+  </section>
+
+  <!-- 联系信息卡片 -->
+  <section class="section contact-info-section">
+    <div class="container">
+      <div class="contact-info-grid">
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="fas fa-phone-alt"></i></div>
+          <h4>电话咨询</h4>
+          <p class="contact-detail">400-888-9999</p>
+          <p class="contact-time">周一至周五 9:00-18:00</p>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="fas fa-envelope"></i></div>
+          <h4>电子邮箱</h4>
+          <p class="contact-detail">info@precision.com</p>
+          <p class="contact-time">24小时内回复</p>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="fas fa-map-marker-alt"></i></div>
+          <h4>公司地址</h4>
+          <p class="contact-detail">北京市海淀区科技园</p>
+          <p class="contact-time">邮编：100080</p>
+        </div>
+        <div class="contact-info-card">
+          <div class="contact-icon"><i class="fas fa-fax"></i></div>
+          <h4>传真</h4>
+          <p class="contact-detail">010-8888-9999</p>
+          <p class="contact-time">24小时自动接收</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- 联系表单和地图 -->
+  <section class="section section-alt contact-main-section">
+    <div class="container">
+      <div class="contact-layout">
+        <!-- 联系表单 -->
+        <div class="contact-form-wrapper">
+          <h2 class="section-title">在线咨询</h2>
+          <p class="section-subtitle">填写以下表单，我们将尽快与您联系</p>
+          <form class="contact-form" id="contactForm">
+            <div class="form-row">
+              <div class="form-group">
+                <label for="name">您的姓名 <span class="required">*</span></label>
+                <input type="text" id="name" name="name" class="form-control" placeholder="请输入您的姓名" required>
+              </div>
+              <div class="form-group">
+                <label for="company">公司名称</label>
+                <input type="text" id="company" name="company" class="form-control" placeholder="请输入公司名称">
+              </div>
+            </div>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">联系电话 <span class="required">*</span></label>
+                <input type="tel" id="phone" name="phone" class="form-control" placeholder="请输入联系电话" required>
+              </div>
+              <div class="form-group">
+                <label for="email">电子邮箱 <span class="required">*</span></label>
+                <input type="email" id="email" name="email" class="form-control" placeholder="请输入电子邮箱" required>
+              </div>
+            </div>
+            <div class="form-group">
+              <label for="subject">咨询类型</label>
+              <select id="subject" name="subject" class="form-control">
+                <option value="">请选择咨询类型</option>
+                <option value="product">产品咨询</option>
+                <option value="quote">报价询价</option>
+                <option value="technical">技术支持</option>
+                <option value="service">售后服务</option>
+                <option value="cooperation">商务合作</option>
+                <option value="other">其他</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="product">感兴趣的产品</label>
+              <select id="product" name="product" class="form-control">
+                <option value="">请选择产品</option>
+                <option value="PMX-9000">PMX-9000 智能三坐标测量机</option>
+                <option value="PMX-7000">PMX-7000 高精度测量机</option>
+                <option value="OMS-5000">OMS-5000 光学测量系统</option>
+                <option value="LS-3000">LS-3000 激光扫描仪</option>
+                <option value="CT-2000">CT-2000 工业CT</option>
+                <option value="other">其他产品</option>
+              </select>
+            </div>
+            <div class="form-group">
+              <label for="message">留言内容 <span class="required">*</span></label>
+              <textarea id="message" name="message" class="form-control" rows="5" placeholder="请详细描述您的需求..." required></textarea>
+            </div>
+            <div class="form-group form-checkbox">
+              <input type="checkbox" id="agreement" name="agreement" required>
+              <label for="agreement">我已阅读并同意<a href="#">隐私政策</a>和<a href="#">服务条款</a></label>
+            </div>
+            <button type="submit" class="btn btn-primary btn-large btn-block">
+              <i class="fas fa-paper-plane"></i> 提交咨询
+            </button>
+          </form>
+        </div>
+
+        <!-- 地图和联系详情 -->
+        <div class="contact-details-wrapper">
+          <div class="map-container">
+            <div class="map-placeholder">
+              <i class="fas fa-map-marked-alt"></i>
+              <p>地图加载中...</p>
+              <small>北京市海淀区科技园路88号</small>
+            </div>
+          </div>
+          <div class="contact-details">
+            <h4>总部地址</h4>
+            <p><i class="fas fa-building"></i> 精密仪器科技有限公司</p>
+            <p><i class="fas fa-map-marker-alt"></i> 北京市海淀区科技园路88号</p>
+            <p><i class="fas fa-phone"></i> 电话：400-888-9999</p>
+            <p><i class="fas fa-fax"></i> 传真：010-8888-9999</p>
+            <p><i class="fas fa-envelope

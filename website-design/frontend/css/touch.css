@@ -1,0 +1,455 @@
+/**
+ * 精密仪器公司官网 - 触摸优化样式
+ * 针对移动设备触摸交互优化
+ */
+
+/* ========================================
+   基础触摸优化
+   ======================================== */
+
+/* 禁用双击缩放 */
+html {
+  touch-action: manipulation;
+}
+
+/* 去除移动端点击高亮 */
+* {
+  -webkit-tap-highlight-color: transparent;
+  -webkit-touch-callout: none;
+}
+
+/* 确保可点击元素有合适的触摸区域 */
+button,
+a,
+input,
+textarea,
+select,
+label,
+[role="button"],
+[role="link"],
+.navbar-toggle,
+.mobile-menu-close,
+.dropdown-toggle,
+.tab-button,
+.accordion-header,
+.slider-handle,
+.switch-toggle {
+  min-width: 44px;
+  min-height: 44px;
+}
+
+/* 按钮触摸优化 */
+.btn,
+button,
+[role="button"] {
+  min-height: 44px;
+  min-width: 44px;
+  touch-action: manipulation;
+  cursor: pointer;
+}
+
+/* 链接触摸优化 */
+a {
+  min-height: 44px;
+  display: inline-flex;
+  align-items: center;
+  touch-action: manipulation;
+}
+
+/* 导航链接 */
+.navbar-nav a,
+.mobile-drawer a,
+.footer-link {
+  min-height: 44px;
+  padding: var(--space-2) var(--space-3);
+  display: flex;
+  align-items: center;
+}
+
+/* 表单元素触摸优化 */
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+input[type="number"],
+input[type="password"],
+input[type="search"],
+input[type="url"],
+textarea,
+select {
+  min-height: 44px;
+  font-size: 16px; /* 防止iOS缩放 */
+  touch-action: manipulation;
+}
+
+/* 复选框和单选按钮 */
+input[type="checkbox"],
+input[type="radio"] {
+  min-width: 20px;
+  min-height: 20px;
+  width: 20px;
+  height: 20px;
+}
+
+/* 表单标签 */
+.form-label {
+  min-height: 44px;
+  display: flex;
+  align-items: center;
+}
+
+/* ========================================
+   触摸反馈效果
+   ======================================== */
+
+/* 按钮触摸反馈 */
+.btn,
+button,
+[role="button"] {
+  transition: transform 0.1s ease, opacity 0.1s ease;
+}
+
+.btn:active,
+button:active,
+[role="button"]:active {
+  transform: scale(0.96);
+  opacity: 0.9;
+}
+
+/* 卡片触摸反馈 */
+.card,
+.product-card,
+.feature-card,
+.news-card {
+  transition: transform 0.15s ease, box-shadow 0.15s ease;
+}
+
+.card:active,
+.product-card:active,
+.feature-card:active,
+.news-card:active {
+  transform: scale(0.98);
+}
+
+/* 链接触摸反馈 */
+a:active {
+  opacity: 0.7;
+}
+
+/* 列表项触摸反馈 */
+.list-item,
+.dropdown-item,
+.search-suggestion-item {
+  transition: background-color 0.1s ease;
+}
+
+.list-item:active,
+.dropdown-item:active,
+.search-suggestion-item:active {
+  background-color: var(--bg-hover);
+}
+
+/* 导航项触摸反馈 */
+.navbar-nav a:active,
+.mobile-drawer a:active {
+  background-color: var(--bg-hover);
+}
+
+/* ========================================
+   移动端特定优化
+   ======================================== */
+
+@media (max-width: 1023px) {
+  /* 增大触摸目标 */
+  .navbar-toggle {
+    width: 48px;
+    height: 48px;
+    padding: var(--space-2);
+  }
+
+  /* 汉堡菜单按钮 */
+  .hamburger-line {
+    width: 24px;
+    height: 2px;
+    background: currentColor;
+    border-radius: 2px;
+    transition: transform 0.2s ease, opacity 0.2s ease;
+  }
+
+  /* 抽屉菜单触摸优化 */
+  .mobile-drawer {
+    touch-action: pan-y;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .mobile-drawer-overlay {
+    touch-action: none;
+  }
+
+  /* 关闭按钮 */
+  .mobile-menu-close {
+    width: 48px;
+    height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 子菜单展开按钮 */
+  .submenu-toggle {
+    min-width: 44px;
+    min-height: 44px;
+    padding: var(--space-2);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* 增大表单元素 */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  /* 增大复选框和单选按钮 */
+  .form-checkbox,
+  .form-radio {
+    width: 22px;
+    height: 22px;
+  }
+
+  /* 增大滑块手柄 */
+  .slider-handle {
+    width: 24px;
+    height: 24px;
+  }
+
+  /* 增大开关 */
+  .switch-toggle {
+    width: 52px;
+    height: 32px;
+  }
+
+  .switch-toggle::after {
+    width: 28px;
+    height: 28px;
+  }
+
+  /* 增大分页按钮 */
+  .pagination-btn {
+    min-width: 44px;
+    min-height: 44px;
+  }
+
+  /* 增大标签 */
+  .tag,
+  .badge {
+    min-height: 32px;
+    padding: var(--space-1) var(--space-3);
+  }
+
+  /* 增大图标按钮 */
+  .icon-btn {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* 增大下拉菜单项 */
+  .dropdown-item {
+    min-height: 48px;
+    padding: var(--space-3) var(--space-4);
+  }
+
+  /* 增大选择器选项 */
+  select option {
+    min-height: 44px;
+    padding: var(--space-2);
+  }
+}
+
+/* ========================================
+   触摸手势支持
+   ======================================== */
+
+/* 滑动手势区域 */
+.swipe-area {
+  touch-action: pan-x pan-y;
+}
+
+/* 仅垂直滚动 */
+.scroll-y {
+  touch-action: pan-y;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 仅水平滚动 */
+.scroll-x {
+  touch-action: pan-x;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 禁用触摸操作 */
+.no-touch {
+  touch-action: none;
+}
+
+/* ========================================
+   快速点击优化
+   ======================================== */
+
+/* 防止点击延迟 */
+.fast-click {
+  touch-action: manipulation;
+}
+
+/* 主动画元素防止误触 */
+.animating {
+  pointer-events: none;
+}
+
+/* ========================================
+   触摸设备特定样式
+   ======================================== */
+
+/* 检测触摸设备 */
+@media (hover: none) and (pointer: coarse) {
+  /* 触摸设备上显示更大的点击区域 */
+  .touch-target {
+    position: relative;
+  }
+
+  .touch-target::before {
+    content: '';
+    position: absolute;
+    top: -8px;
+    left: -8px;
+    right: -8px;
+    bottom: -8px;
+    z-index: 1;
+  }
+
+  /* 触摸设备上移除hover效果 */
+  .btn:hover,
+  a:hover,
+  .card:hover {
+    transform: none;
+  }
+
+  /* 触摸设备上:active替代:hover */
+  .btn:active,
+  a:active,
+  .card:active {
+    opacity: 0.8;
+  }
+
+  /* 增大滚动条 */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+
+  ::-webkit-scrollbar-thumb {
+    border-radius: 4px;
+  }
+}
+
+/* 支持hover的设备 */
+@media (hover: hover) and (pointer: fine) {
+  /* 桌面端hover效果 */
+  .btn:hover,
+  button:hover,
+  [role="button"]:hover {
+    transform: translateY(-1px);
+  }
+
+  .card:hover,
+  .product-card:hover,
+  .feature-card:hover {
+    transform: translateY(-4px);
+    box-shadow: var(--shadow-lg);
+  }
+}
+
+/* ========================================
+   表单触摸优化
+   ======================================== */
+
+/* 输入框焦点状态 */
+.form-input:focus,
+.form-textarea:focus,
+.form-select:focus {
+  outline: none;
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px var(--color-primary-alpha-20);
+}
+
+/* 触摸设备上增大焦点轮廓 */
+@media (hover: none) and (pointer: coarse) {
+  .form-input:focus,
+  .form-textarea:focus,
+  .form-select:focus {
+    box-shadow: 0 0 0 4px var(--color-primary-alpha-20);
+  }
+}
+
+/* 禁用自动填充背景色 */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus {
+  -webkit-box-shadow: 0 0 0px 1000px var(--bg-primary) inset;
+  transition: background-color 5000s ease-in-out 0s;
+}
+
+/* ========================================
+   滚动优化
+   ======================================== */
+
+/* 平滑滚动 */
+.smooth-scroll {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+/* 滚动捕捉 */
+.snap-scroll {
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+}
+
+.snap-scroll > * {
+  scroll-snap-align: start;
+}
+
+/* 隐藏滚动条但保持滚动功能 */
+.hide-scrollbar {
+  -ms-overflow-style: none;
+  scrollbar-width: none;
+}
+
+.hide-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+
+/* ========================================
+   无障碍支持
+   ======================================== */
+
+/* 焦点可见性 */
+:focus-visible {
+  outline: 2px solid var(--color-primary);
+  outline-offset: 2px;
+}
+
+/* 触摸设备上焦点样式 */
+@media (hover: none) and (pointer: coarse) {
+  :focus-visible {
+    outline: 3px solid var(--color-primary);
+    outline-offset: 3px;
+  }
+}
+
+/* 禁用焦点轮廓（通过其他方式提供焦点指示） */
+:focus:not(:focus-visible) {
+  outline: none;
+}

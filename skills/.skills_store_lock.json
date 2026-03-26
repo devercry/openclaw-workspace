@@ -42,6 +42,36 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=tech-news-digest",
       "source": "skillhub",
       "version": "3.15.0"
+    },
+    "edge-tts": {
+      "name": "Edge TTS",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=edge-tts",
+      "source": "skillhub",
+      "version": "2.0.0"
+    },
+    "openai-whisper": {
+      "name": "Openai Whisper",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=openai-whisper",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "google-gemini-media": {
+      "name": "Google Gemini Media",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=google-gemini-media",
+      "source": "skillhub",
+      "version": "1.0.1"
+    },
+    "gog": {
+      "name": "Gog",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=gog",
+      "source": "skillhub",
+      "version": "1.0.0"
+    },
+    "google-play": {
+      "name": "Google Play",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=google-play",
+      "source": "skillhub",
+      "version": "1.0.3"
     }
   }
 }

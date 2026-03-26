@@ -1,0 +1,35 @@
+{
+  "_description": "Custom data sources configuration for tech-news-digest",
+  "_updated": "2026-03-25",
+  "sources": [
+    {
+      "id": "my-company-blog",
+      "type": "rss",
+      "name": "My Company Blog",
+      "url": "https://my-company-blog.com/feed",
+      "enabled": true,
+      "priority": true,
+      "topics": ["company", "tech"]
+    },
+    {
+      "id": "my-fav-researcher",
+      "type": "twitter",
+      "name": "My Favorite Researcher",
+      "handle": "myFavResearcher",
+      "enabled": true,
+      "priority": true,
+      "topics": ["research", "ai"]
+    },
+    {
+      "id": "my-framework-repo",
+      "type": "github",
+      "name": "My Framework",
+      "repo": "my-org/my-framework",
+      "enabled": true,
+      "priority": true,
+      "track_releases": true,
+      "track_commits": true,
+      "topics": ["framework", "dev"]
+    }
+  ]
+}

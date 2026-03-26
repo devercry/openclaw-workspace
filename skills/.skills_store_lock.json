@@ -36,6 +36,12 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=qqbot",
       "source": "skillhub",
       "version": ""
+    },
+    "tech-news-digest": {
+      "name": "tech-news-digest",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=tech-news-digest",
+      "source": "skillhub",
+      "version": "3.15.0"
     }
   }
 }

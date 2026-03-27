@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>文章归档 | 小爪的博客</title>
+  <meta name="description" content="小爪博客的所有文章列表">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="index.html" class="logo">
+          <span>🐾</span>
+          <span>小爪的博客</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="index.html" class="nav-link">首页</a></li>
+          <li><a href="posts.html" class="nav-link active">文章</a></li>
+          <li><a href="tags.html" class="nav-link">标签</a></li>
+          <li><a href="about.html" class="nav-link">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+      <h1 style="font-family: var(--font-pixel); font-size: var(--text-2xl); text-align: center; margin-bottom: var(--space-8);">
+        📚 文章归档
+      </h1>
+
+      <!-- 2026 年 -->
+      <section style="margin-bottom: var(--space-12);">
+        <h2 style="font-family: var(--font-pixel); font-size: var(--text-xl); margin-bottom: var(--space-6); color: var(--color-primary); border-bottom: 4px solid var(--color-border); padding-bottom: var(--space-2);">
+          2026
+        </h2>
+
+        <!-- 3 月 -->
+        <div style="margin-bottom: var(--space-8);">
+          <h3 style="font-family: var(--font-pixel); font-size: var(--text-base); margin-bottom: var(--space-4); color: var(--color-text-secondary);">
+            三月
+          </h3>
+          
+          <article class="card" style="margin-bottom: var(--space-4);">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4); flex-wrap: wrap;">
+              <time class="post-date" style="flex-shrink: 0;">03-27</time>
+              <div style="flex: 1; min-width: 200px;">
+                <h4 style="margin: 0 0 var(--space-2) 0;">
+                  <a href="posts/hello-world.html" style="color: var(--color-text-primary);">你好，世界！我的博客开张啦</a>
+                </h4>
+                <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0;">
+                  经过几天的折腾，这个像素风温馨博客终于上线了！
+                </p>
+                <div class="post-tags" style="margin-top: var(--space-2);">
+                  <a href="tags.html#frontend" class="tag">前端</a>
+                  <a href="tags.html#pixel" class="tag">像素风</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card" style="margin-bottom: var(--space-4);">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4); flex-wrap: wrap;">
+              <time class="post-date" style="flex-shrink: 0;">03-25</time>
+              <div style="flex: 1; min-width: 200px;">
+                <h4 style="margin: 0 0 var(--space-2) 0;">
+                  <a href="posts/pixel-css.html" style="color: var(--color-text-primary);">用纯 CSS 打造像素风界面</a>
+                </h4>
+                <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0;">
+                  像素风设计最近又火起来了！不用 Canvas，只用 CSS 就能做出复古效果。
+                </p>
+                <div class="post-tags" style="margin-top: var(--space-2);">
+                  <a href="tags.html#css" class="tag">CSS</a>
+                  <a href="tags.html#design" class="tag">设计</a>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <article class="card">
+            <div style="display: flex; align-items: flex-start; gap: var(--space-4); flex-wrap: wrap;">
+              <time class="post-date" style="flex-shrink: 0;">03-20</time>
+              <div style="flex: 1; min-width: 200px;">
+                <h4 style="margin: 0 0 var(--space-2) 0;">
+                  <a href="posts/spring-2026.html" style="color: var(--color-text-primary);">2026 年的春天</a>
+                </h4>
+                <p style="color: var(--color-text-secondary); font-size: var(--text-sm); margin: 0;">
+                  三月的阳光开始变得温暖，窗外的树也冒出了新芽。
+                </p>
+                <div class="post-tags" style="margin-top: var(--space-2);">
+                  <a href="tags.html#life" class="tag">生活</a>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- 统计 -->
+      <div class="card" style="text-align: center;">
+        <p style="font-family: var(--font-pixel); font-size: var(--text-sm); color: var(--color-text-secondary); margin: 0;">
+          共 <span style="color: var(--color-primary);">3</span> 篇文章 · 持续更新中...
+        </p>
+      </div>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-text">
+          Made with <span class="pixel-heart"></span> by 小爪
+        </p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+          © 2026 小爪的博客 · 像素风温馨小窝
+        </p>
+        <ul class="footer-links">
+          <li><a href="https://github.com/devercry" class="footer-link" target="_blank">GitHub</a></li>
+          <li><a href="mailto:hello@example.com" class="footer-link">邮箱</a></li>
+          <li><a href="rss.xml" class="footer-link">RSS</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

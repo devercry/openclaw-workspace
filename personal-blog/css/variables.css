@@ -1,0 +1,96 @@
+/* ========================================
+   像素风温馨博客 - CSS 变量
+   ======================================== */
+
+:root {
+  /* 像素基础单位 */
+  --pixel-size: 4px;
+  
+  /* 温馨配色方案 - 奶油暖色调 */
+  --color-bg-primary: #FFFBEB;      /* 奶油色背景 */
+  --color-bg-secondary: #FEF3C7;    /* 浅琥珀 */
+  --color-bg-card: #FFFFFF;         /* 卡片白 */
+  --color-bg-muted: #FDF6E3;        /* 柔和奶油 */
+  
+  /* 文字颜色 */
+  --color-text-primary: #451a03;    /* 深棕色 */
+  --color-text-secondary: #78350f;  /* 中棕色 */
+  --color-text-muted: #a16207;      /* 浅棕色 */
+  --color-text-inverse: #FFFBEB;    /* 反色 */
+  
+  /* 强调色 - 温暖琥珀 */
+  --color-primary: #d97706;         /* 主色：琥珀 */
+  --color-primary-dark: #92400e;    /* 深琥珀 */
+  --color-secondary: #f59e0b;       /* 次色：金黄 */
+  --color-accent: #fbbf24;          /* 点缀：亮黄 */
+  
+  /* 像素边框 */
+  --color-border: #451a03;
+  --color-border-light: #d97706;
+  
+  /* 状态色 */
+  --color-success: #16a34a;
+  --color-warning: #ea580c;
+  --color-error: #dc2626;
+  
+  /* 阴影 - 像素风格硬阴影 */
+  --shadow-pixel-sm: 
+    calc(var(--pixel-size) * 1) calc(var(--pixel-size) * 1) 0 var(--color-border);
+  --shadow-pixel: 
+    calc(var(--pixel-size) * 2) calc(var(--pixel-size) * 2) 0 var(--color-border);
+  --shadow-pixel-lg: 
+    calc(var(--pixel-size) * 3) calc(var(--pixel-size) * 3) 0 var(--color-border);
+  
+  /* 字体 */
+  --font-pixel: 'Press Start 2P', cursive;
+  --font-body: 'Noto Sans SC', 'Microsoft YaHei', sans-serif;
+  --font-mono: 'VT323', monospace;
+  
+  /* 字号 - 像素感 */
+  --text-xs: 0.75rem;      /* 12px */
+  --text-sm: 0.875rem;     /* 14px */
+  --text-base: 1rem;       /* 16px */
+  --text-lg: 1.125rem;     /* 18px */
+  --text-xl: 1.25rem;      /* 20px */
+  --text-2xl: 1.5rem;      /* 24px */
+  --text-3xl: 2rem;        /* 32px - 像素标题 */
+  --text-4xl: 2.5rem;      /* 40px */
+  
+  /* 间距 - 8px 基准 */
+  --space-1: 0.25rem;      /* 4px */
+  --space-2: 0.5rem;       /* 8px */
+  --space-3: 0.75rem;      /* 12px */
+  --space-4: 1rem;         /* 16px */
+  --space-6: 1.5rem;       /* 24px */
+  --space-8: 2rem;         /* 32px */
+  --space-12: 3rem;        /* 48px */
+  --space-16: 4rem;        /* 64px */
+  
+  /* 圆角 - 像素风格少用圆角 */
+  --radius-none: 0;
+  --radius-sm: 2px;
+  --radius-base: 4px;
+  
+  /* 动画 */
+  --duration-fast: 150ms;
+  --duration-base: 300ms;
+  --duration-slow: 500ms;
+  --ease-bounce: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  --ease-pixel: steps(4);
+  
+  /* 布局 */
+  --max-width: 800px;
+  --header-height: 80px;
+}
+
+/* 暗色模式 - 可选 */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --color-bg-primary: #1c1917;
+    --color-bg-secondary: #292524;
+    --color-bg-card: #44403c;
+    --color-text-primary: #fafaf9;
+    --color-text-secondary: #d6d3d1;
+    --color-border: #78716c;
+  }
+}

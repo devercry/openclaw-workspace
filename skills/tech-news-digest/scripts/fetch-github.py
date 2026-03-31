@@ -147,7 +147,7 @@ def truncate_summary(text: str, max_chars: int = 200) -> str:
 def resolve_github_token() -> Optional[str]:
     """Resolve GitHub token from multiple sources, in priority order:
     
-    1. $GITHUB_TOKEN env var (PAT or pre-generated App token)
+    1. GITHUB_TOKEN env var (PAT or pre-generated App token)
     2. GitHub App installation token (auto-generated from App credentials)
     3. `gh auth token` CLI fallback
     4. None (unauthenticated, 60 req/hr)
@@ -200,7 +200,7 @@ def resolve_github_token() -> Optional[str]:
     
     # 4. Unauthenticated
     logging.warning("⚠️ No GitHub token found — rate limit 60 req/hr (22 repos may fail)")
-    logging.warning("  Set $GITHUB_TOKEN or install GitHub App credentials to fix this")
+    logging.warning("  Set GITHUB_TOKEN or install GitHub App credentials to fix this")
     return None
 
 

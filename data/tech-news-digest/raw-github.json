@@ -1,0 +1,467 @@
+{
+  "generated": "2026-03-31T07:52:08.312878+00:00",
+  "source_type": "github",
+  "defaults_dir": "/home/tenbox/.openclaw/workspace/skills/tech-news-digest/config/defaults",
+  "config_dir": "/home/tenbox/.openclaw/workspace/config",
+  "hours": 24,
+  "github_token_used": true,
+  "sources_total": 28,
+  "sources_ok": 27,
+  "total_articles": 6,
+  "sources": [
+    {
+      "source_id": "go-ethereum-github",
+      "source_type": "github",
+      "name": "go-ethereum (Geth)",
+      "repo": "ethereum/go-ethereum",
+      "priority": true,
+      "topics": [
+        "crypto"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "go-ethereum v1.17.2",
+          "link": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.2",
+          "date": "2026-03-30T11:24:52+00:00",
+          "summary": "<!-- EMF Suppressor (v1.17.2) --> This is a maintenance release with several important bug fixes. Notably, a critical issue in debug_executionWitness could previously corrupt node data, users relying...",
+          "topics": [
+            "crypto"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "agno-github",
+      "source_type": "github",
+      "name": "Agno",
+      "repo": "agno-agi/agno",
+      "priority": true,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "agno v2.5.12",
+          "link": "https://github.com/agno-agi/agno/releases/tag/v2.5.12",
+          "date": "2026-03-30T22:36:29+00:00",
+          "summary": "What's Changed fix: preserve server tool blocks in Claude conversation history by @Mustafa-Esoofally in https://github.com/agno-agi/agno/pull/6879 [feat] Docling tool integration with tests and...",
+          "topics": [
+            "ai-agent"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "langchain-github",
+      "source_type": "github",
+      "name": "LangChain",
+      "repo": "langchain-ai/langchain",
+      "priority": true,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "transformers-github",
+      "source_type": "github",
+      "name": "Hugging Face Transformers",
+      "repo": "huggingface/transformers",
+      "priority": true,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "ollama-github",
+      "source_type": "github",
+      "name": "Ollama",
+      "repo": "ollama/ollama",
+      "priority": true,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "pytorch-github",
+      "source_type": "github",
+      "name": "PyTorch",
+      "repo": "pytorch/pytorch",
+      "priority": true,
+      "topics": [
+        "llm",
+        "frontier-tech"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "eips-github",
+      "source_type": "github",
+      "name": "Ethereum EIPs",
+      "repo": "ethereum/EIPs",
+      "priority": true,
+      "topics": [
+        "crypto"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "openclaw-github",
+      "source_type": "github",
+      "name": "OpenClaw",
+      "repo": "openclaw/openclaw",
+      "priority": true,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "github-mcp-servers",
+      "source_type": "github",
+      "name": "MCP Servers",
+      "repo": "modelcontextprotocol/servers",
+      "priority": true,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "github-deepseek-v3",
+      "source_type": "github",
+      "name": "DeepSeek V3",
+      "repo": "deepseek-ai/DeepSeek-V3",
+      "priority": true,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "github-meta-llama",
+      "source_type": "github",
+      "name": "Meta Llama",
+      "repo": "meta-llama/llama-models",
+      "priority": true,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "vllm-github",
+      "source_type": "github",
+      "name": "vLLM",
+      "repo": "vllm-project/vllm",
+      "priority": false,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "vllm v0.18.1",
+          "link": "https://github.com/vllm-project/vllm/releases/tag/v0.18.1",
+          "date": "2026-03-31T00:53:26+00:00",
+          "summary": "This is a patch release on top of v0.18.0 to address a few issues: - Change default SM100 MLA prefill backend back to TRT-LLM (#38562) - Fix mock.patch resolution failure for...",
+          "topics": [
+            "llm"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "foundry-github",
+      "source_type": "github",
+      "name": "Foundry",
+      "repo": "foundry-rs/foundry",
+      "priority": false,
+      "topics": [
+        "crypto"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "foundry nightly-24ff91d9319b4a38dfa695eb2963726ffc2c349b",
+          "link": "https://github.com/foundry-rs/foundry/releases/tag/nightly-24ff91d9319b4a38dfa695eb2963726ffc2c349b",
+          "date": "2026-03-31T06:32:47+00:00",
+          "summary": "Other - refactor(cheatcodes): deduplicate base64 overload implementations (#13966) by @anim001k - feat(evm): add FoundryHardfork::Tempo variant (#13972) by @stevencartavia - refactor(cheatcodes):...",
+          "topics": [
+            "crypto"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "openviking-github",
+      "source_type": "github",
+      "name": "OpenViking",
+      "repo": "volcengine/OpenViking",
+      "priority": false,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "OpenViking v0.3.1",
+          "link": "https://github.com/volcengine/OpenViking/releases/tag/v0.3.1",
+          "date": "2026-03-31T07:15:45+00:00",
+          "summary": "What's Changed feat(ast): add PHP tree-sitter support by @yangxinxin-7 in https://github.com/volcengine/OpenViking/pull/1087 feat(ci): add multi-platform API test support for 5 platforms by...",
+          "topics": [
+            "llm"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "picoclaw-github",
+      "source_type": "github",
+      "name": "Sipeed PicoClaw",
+      "repo": "sipeed/picoclaw",
+      "priority": false,
+      "topics": [
+        "frontier-tech"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 1,
+      "articles": [
+        {
+          "title": "picoclaw nightly",
+          "link": "https://github.com/sipeed/picoclaw/releases/tag/nightly",
+          "date": "2026-03-31T00:54:18+00:00",
+          "summary": "Nightly build for v0.2.4-nightly.20260331.4d348247 This is an automated build and may be unstable. Use with caution. Full Changelog: https://github.com/sipeed/picoclaw/compare/v0.2.4...main",
+          "topics": [
+            "frontier-tech"
+          ]
+        }
+      ]
+    },
+    {
+      "source_id": "openai-python-github",
+      "source_type": "github",
+      "name": "OpenAI Python SDK",
+      "repo": "openai/openai-python",
+      "priority": false,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "crewai-github",
+      "source_type": "github",
+      "name": "CrewAI",
+      "repo": "crewAIInc/crewAI",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "anthropic-sdk-github",
+      "source_type": "github",
+      "name": "Anthropic SDK",
+      "repo": "anthropics/anthropic-sdk-python",
+      "priority": false,
+      "topics": [
+        "llm"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "llamaindex-github",
+      "source_type": "github",
+      "name": "LlamaIndex",
+      "repo": "run-llama/llama_index",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "autogen-github",
+      "source_type": "github",
+      "name": "AutoGen",
+      "repo": "microsoft/autogen",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "linux-github",
+      "source_type": "github",
+      "name": "Linux Kernel",
+      "repo": "torvalds/linux",
+      "priority": false,
+      "topics": [
+        "frontier-tech"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "dify-github",
+      "source_type": "github",
+      "name": "Dify",
+      "repo": "langgenius/dify",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "rust-github",
+      "source_type": "github",
+      "name": "Rust",
+      "repo": "rust-lang/rust",
+      "priority": false,
+      "topics": [
+        "frontier-tech"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "solidity-github",
+      "source_type": "github",
+      "name": "Solidity",
+      "repo": "ethereum/solidity",
+      "priority": false,
+      "topics": [
+        "crypto"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "mem0-github",
+      "source_type": "github",
+      "name": "Mem0",
+      "repo": "mem0ai/mem0",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "moltworker-github",
+      "source_type": "github",
+      "name": "Cloudflare MoltWorker",
+      "repo": "cloudflare/moltworker",
+      "priority": false,
+      "topics": [
+        "frontier-tech"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "nanobot-github",
+      "source_type": "github",
+      "name": "HKUDS NanoBot",
+      "repo": "HKUDS/nanobot",
+      "priority": false,
+      "topics": [
+        "ai-agent"
+      ],
+      "status": "ok",
+      "attempts": 1,
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "zeroclaw-github",
+      "source_type": "github",
+      "name": "ZeroClaw",
+      "repo": "zeroclaw-labs/zeroclaw",
+      "priority": false,
+      "topics": [
+        "crypto"
+      ],
+      "status": "error",
+      "attempts": 3,
+      "error": "HTTP Error 404: Not Found",
+      "count": 0,
+      "articles": []
+    }
+  ]
+}

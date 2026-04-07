@@ -1,6 +1,9 @@
 #!/bin/bash
 # 🐾 OpenClaw 配置恢复脚本
 # 用法：./restore-config.sh [备份提交 hash]
+# 
+# ⚠️ 重要：从仓库拉取备份后，务必运行此脚本！
+#        否则可能漏掉插件安装
 
 set -e
 
@@ -11,12 +14,23 @@ EXTENSIONS_DIR=~/.openclaw/extensions
 echo "═══════════════════════════════════════════════════════════"
 echo "  🐾 OpenClaw 配置恢复脚本"
 echo "═══════════════════════════════════════════════════════════"
+echo ""
+echo "⚠️  重要提示："
+echo "   从仓库拉取备份后，务必运行此脚本！"
+echo "   否则可能漏掉插件安装，导致配置报错"
+echo ""
 
 # 1. 从 git 恢复配置文件
-echo ""
 echo "📦 步骤 1: 恢复配置文件..."
 cd $WORKSPACE
-git pull origin main --allow-unrelated-histories --no-rebase || true
+
+# 检查是否有远程更新
+if git remote | grep -q origin; then
+    echo "   从 origin 拉取更新..."
+    git pull origin main --allow-unrelated-histories --no-rebase || true
+else
+    echo "   ⚠️  未配置 origin 远程，跳过拉取"
+fi
 
 # 2. 扫描配置文件中的频道配置
 echo ""
@@ -94,6 +108,13 @@ echo ""
 echo "═══════════════════════════════════════════════════════════"
 echo "  ✅ 恢复完成！"
 echo "═══════════════════════════════════════════════════════════"
+echo ""
+echo "📌 下次恢复时的正确流程："
+echo "   1. cd ~/.openclaw/workspace"
+echo "   2. git pull origin main"
+echo "   3. ./scripts/restore-config.sh  ← 别忘了这步！"
+echo ""
+echo "⚠️  如果不运行此脚本，可能漏掉插件安装！"
 echo ""
 echo "验证命令："
 echo "  openclaw channels list   # 查看频道状态"

@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>产品中心 - 精密仪器股份有限公司</title>
+    <meta name="description" content="精密仪器产品中心，提供三坐标测量机、影像测量仪、表面粗糙度仪、硬度计等全系列精密测量设备，满足各行业检测需求。">
+    <link rel="stylesheet" href="css/variables.css">
+    <link rel="stylesheet" href="css/base.css">
+    <link rel="stylesheet" href="css/components.css">
+    <link rel="stylesheet" href="css/responsive.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- 导航栏 -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <a href="index.html" class="logo">
+                <i class="fas fa-microscope"></i>
+                <span>精密仪器</span>
+            </a>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="index.html" class="nav-link">首页</a></li>
+                <li><a href="products.html" class="nav-link active">产品中心</a></li>
+                <li><a href="index.html#solutions" class="nav-link">解决方案</a></li>
+                <li><a href="index.html#cases" class="nav-link">客户案例</a></li>
+                <li><a href="index.html#news" class="nav-link">新闻动态</a></li>
+                <li><a href="index.html#about" class="nav-link">关于我们</a></li>
+                <li><a href="index.html#contact" class="nav-link">联系我们</a></li>
+            </ul>
+            <div class="nav-actions">
+                <button class="btn-icon" id="searchBtn" title="搜索">
+                    <i class="fas fa-search"></i>
+                </button>
+                <button class="btn-icon" id="themeToggle" title="切换主题">
+                    <i class="fas fa-moon"></i>
+                </button>
+                <button class="btn btn-primary btn-sm">在线咨询</button>
+            </div>
+            <button class="mobile-menu-toggle" id="mobileMenuToggle">
+                <i class="fas fa-bars"></i>
+            </button>
+        </div>
+    </nav>
+
+    <!-- 搜索模态框 -->
+    <div class="search-modal" id="searchModal">
+        <div class="search-container">
+            <input type="text" class="search-input" placeholder="搜索产品..." id="searchInput">
+            <button class="search-close" id="searchClose"><i class="fas fa-times"></i></button>
+        </div>
+    </div>
+
+    <!-- 页面标题 -->
+    <section class="page-header">
+        <div class="container">
+            <h1 class="page-title">产品中心</h1>
+            <p class="page-subtitle">覆盖精密测量全领域，满足各行业检测需求</p>
+            <nav class="breadcrumb">
+                <a href="index.html">首页</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">产品中心</span>
+            </nav>
+        </div>
+    </section>
+
+    <!-- 产品分类筛选 -->
+    <section class="section section-sm">
+        <div class="container">
+            <div class="filter-bar">
+                <div class="filter-categories">
+                    <button class="filter-btn active" data-category="all">
+                        <i class="fas fa-th-large"></i>
+                        全部产品
+                    </button>
+                    <button class="filter-btn" data-category="cmm">
+                        <i class="fas fa-cube"></i>
+                        三坐标测量机
+                    </button>
+                    <button class="filter-btn" data-category="vision">
+                        <i class="fas fa-eye"></i>
+                        影像测量仪
+                    </button>
+                    <button class="filter-btn" data-category="roughness">
+                        <i class="fas fa-wave-square"></i>
+                        表面粗糙度仪
+                    </button>
+                    <button class="filter-btn" data-category="hardness">
+                        <i class="fas fa-gem"></i>
+                        硬度计
+                    </button>
+                </div>
+                <div class="filter-sort">
+                    <select class="sort-select" id="sortSelect">
+                        <option value="default">默认排序</option>
+                        <option value="price-asc">价格从低到高</option>
+                        <option value="price-desc">价格从高到低</option>
+                        <option value="newest">最新发布</option>
+                    </select>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品列表 -->
+    <section class="section">
+        <div class="container">
+            <div class="products-grid" id="productsGrid">
+                <!-- 产品卡片将通过JavaScript动态生成 -->
+            </div>
+            <div class="pagination" id="pagination">
+                <!-- 分页将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </section>
+
+    <!-- 产品详情模态框 -->
+    <div class="product-modal" id="productModal">
+        <div class="product-modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <div class="product-modal-body" id="productModalBody">
+                <!-- 产品详情内容将通过JavaScript动态生成 -->
+            </div>
+        </div>
+    </div>
+
+    <!-- 产品对比浮窗 -->
+    <div class="compare-bar" id="compareBar">
+        <div class="compare-info">
+            <span class="compare-count">已选择 <strong id="compareCount">0</strong> 款产品</span>
+            <span class="compare-hint">最多可选择4款产品进行对比</span>
+        </div>
+        <div class="compare-actions">
+            <button class="btn btn-outline btn-sm" id="clearCompare">清空</button>
+            <button class="btn btn-primary btn-sm" id="startCompare">开始对比</button>
+        </div>
+    </div>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div class="footer-brand">
+                    <a href="index.html" class="footer-logo">
+                        <i class="fas fa-microscope"></i>
+                        <span>精密仪器</span>
+                    </a>
+                    <p class="footer-desc">专注精密测量26年，为全球3000+企业提供高精度测量解决方案</p>
+                    <div class="footer-contact">
+                        <div class="contact-item">
+                            <i class="fas fa-phone-alt"></i>
+                            <span>400-888-8888</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-envelope"></i>
+                            <span>sales@precision.com</span>
+                        </div>
+                        <div class="contact-item">
+                            <i class="fas fa-map-marker-alt"></i>
+                            <span>北京市海淀区中关村科技园区</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">产品中心</h4>
+                    <ul>
+                        <li><a href="products.html?category=cmm">三坐标测量机</a></li>
+                        <li><a href="products.html?category=vision">影像测量仪</a></li>
+                        <li><a href="products.html?category=roughness">表面粗糙度仪</a></li>
+                        <li><a href="products.html?category=hardness">硬度计</a></li>
+                        <li><a href="products.html">全部产品</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">解决方案</h4>
+                    <ul>
+                        <li><a href="#">航空航天</a></li>
+                        <li><a href="#">汽车制造</a></li>
+                        <li><a href="#">新能源</a></li>
+                        <li><a href="#">医疗器械</a></li>
+                        <li><a href="#">电子制造</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">服务支持</h4>
+                    <ul>
+                        <li><a href="#">技术支持</a></li>
+                        <li><a href="#">售后服务</a></li>
+                        <li><a href="#">培训服务</a></li>
+                        <li><a href="#">配件供应</a></li>
+                        <li><a href="#">软件下载</a></li>
+                    </ul>
+                </div>
+                <div class="footer-links">
+                    <h4 class="footer-title">关于我们</h4>
+                    <ul>
+                        <li><a href="#">公司简介</a></li>
+                        <li><a href="#">发展历程</a></li>
+                        <li><a href="#">资质荣誉</a></li>
+                        <li><a href="#">新闻动态</a></li>
+                        <li><a href="#">加入我们</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p class="copyright">© 2024 精密仪器股份有限公司 版权所有 | 京ICP备XXXXXXXX号</p>
+                <div class="footer-social">
+                    <a href="#" class="social-link" title="微信"><i class="fab fa-weixin"></i></a>
+                    <a href="#" class="social-link" title="微博"><i class="fab fa-weibo"></i></a>
+                    <a href="#" class="social-link" title="LinkedIn"><i class="fab fa-linkedin-in"></i></a>
+                    <a href="#" class="social-link" title="YouTube"><i class="fab fa-youtube"></i></a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- 回到顶部按钮 -->
+    <button class="back-to-top" id="backToTop" title="回到顶部">
+        <i class="fas fa-arrow-up"></i>
+    </button>
+
+    <!-- 脚本 -->
+    <script src="js/content-data.js"></script>
+    <script src="js/theme.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        // 产品页面专用脚本
+        document.addEventListener('DOMContentLoaded', function() {
+            // 渲染产品列表
+            renderProducts();
+            
+            // 绑定筛选按钮事件
+            bindFilterEvents();
+            
+            // 绑定对比功能
+            bindCompareEvents();
+        });
+
+        // 渲染产品列表
+        function renderProducts(category = 'all') {
+            const productsGrid = document.getElementById('productsGrid');
+            let products = ContentData.products;
+            
+            // 按分类筛选
+            if (category !== 'all') {
+                products = products.filter(p => p.category === category);
+            }
+            
+            // 生成产品卡片HTML
+            const productsHTML = products.map(product => `
+                <div class="product-card" data-id="${product.id}" data-category="${product.category}">
+                    <div class="product-image">
+                        <div class="image-placeholder">
+                            <i class="fas fa-cube"></i>
+                        </div>
+                        ${product.badge ? `<span class="product-badge ${product.badgeColor}">${product.badge}</span>` : ''}
+                        <div class="product-actions">
+                            <button class="product-action-btn" title="查看详情" onclick="openProductModal('${product.id}')">
+                                <i class="fas fa-eye"></i>
+                            </button>
+                            <button class="product-action-btn" title="加入对比" onclick="toggleCompare('${product.id}')">
+                                <i class="fas fa-exchange-alt"></i>
+                            </button>
+                            <button class="product-action-btn" title="在线咨询">
+                                <i class="fas fa-comment"></i>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="product-info">
+                        <span class="product-category">${getCategoryName(product.category)}</span>
+                        <h3 class="product-name">${product.name}</h3>
+                        <p class="product-subtitle">${product.subtitle}</p>
+                        <p class="product-desc">${product.description}</p>
+                        <div class="product-specs-preview">
+                            ${product.specifications.slice(0, 3).map(spec => `
+                                <div class="spec-preview-item">
+                                    <span class="spec-label">${spec.label}:</span>
+                                    <span class="spec-value">${spec.value}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="product-features-preview">
+                            ${product.features.slice(0, 2).map(feature => `
+                                <div class="feature-preview-item">
+                                    <i class="fas fa-check"></i>
+                                    <span>${feature}</span>
+                                </div>
+                            `).join('')}
+                        </div>
+                        <div class="product-footer">
+                            <span class="product-price">${product.priceRange}</span>
+                            <button class="btn btn-primary btn-sm" onclick="openProductModal('${product.id}')">
+                                查看详情
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            `).join('');
+            
+            productsGrid.innerHTML = productsHTML;
+        }
+
+        // 获取分类名称
+        function getCategoryName(category) {
+            const categoryNames = {
+                'cmm': '三坐标测量机',
+                'vision': '影像测量仪',
+                'roughness': '表面粗糙度仪',
+                'hardness': '硬度计'
+            };
+            return categoryNames[category] || category;
+        }
+
+        // 绑定筛选按钮事件
+        function bindFilterEvents() {
+            const filterBtns = document.querySelectorAll('.filter-btn');
+            filterBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    // 移除所有active类
+                    filterBtns.forEach(b => b.classList.remove('active'));
+                    // 添加active类到当前按钮
+                    this.classList.add('active');
+                    // 获取分类并重新渲染
+                    const category = this.dataset.category;
+                    renderProducts(category);
+                });
+            });
+        }
+
+        // 打开产品详情模态框
+        function openProductModal(productId) {
+            const product = ContentData.products.find(p => p.id === productId);
+            if (!product) return;
+            
+            const modalBody = document.getElementById('productModalBody');
+            modalBody.innerHTML = `
+                <div class="product-detail">
+                    <div class="product-detail-gallery">
+                        <div class="product-detail-main-image">
+                            <div class="image-placeholder large">
+                                <i class="fas fa-cube"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="product-detail-info">
+                        <span class="product-detail-category">${getCategoryName(product.category)}</span>
+                        <h2 class="product-detail-name">${product.name}</h2>
+                        <p class="product-detail-subtitle">${product
+.subtitle}</p>
+                        <p class="product-detail-desc">${product.description}</p>
+                        <div class="product-detail-price">
+                            <span class="price-label">价格区间：</span>
+                            <span class="price-value">${product.priceRange}</span>
+                        </div>
+                        <div class="product-detail-actions">
+                            <button class="btn btn-primary btn-lg">
+                                <i class="fas fa-phone-alt"></i>
+                                获取报价
+                            </button>
+                            <button class="btn btn-outline btn-lg">
+                                <i class="fas fa-download"></i>
+                                下载资料
+                            </button>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="product-detail-tabs">
+                    <div class="tabs-header">
+                        <button class="tab-btn active" data-tab="specs">技术规格</button>
+                        <button class="tab-btn" data-tab="features">产品特点</button>
+                        <button class="tab-btn" data-tab="applications">应用场景</button>
+                        <button class="tab-btn" data-tab="downloads">资料下载</button>
+                    </div>
+                    <div class="tabs-content">
+                        <div class="tab-panel active" id="tab-specs">
+                            <table class="specs-table">
+                                <tbody>
+                                    ${product.specifications.map(spec => `
+                                        <tr>
+                                            <td class="spec-name">${spec.label}</td>
+                                            <td class="spec-value">${spec.value}</td>
+                                        </tr>
+                                    `).join('')}
+                                </tbody>
+                            </table>
+                        </div>
+                        <div class="tab-panel" id="tab-features">
+                            <ul class="features-list">
+                                ${product.features.map(feature => `
+                                    <li class="feature-item">
+                                        <i class="fas fa-check-circle"></i>
+                                        <span>${feature}</span>
+                                    </li>
+                                `).join('')}
+                            </ul>
+                        </div>
+                        <div class="tab-panel" id="tab-applications">
+                            <div class="applications-grid">
+                                ${product.applications.map(app => `
+                                    <div class="application-item">
+                                        <i class="fas fa-industry"></i>
+                                        <span>${app}</span>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                        <div class="tab-panel" id="tab-downloads">
+                            <div class="downloads-list">
+                                ${product.downloads.map(download => `
+                                    <div class="download-item">
+                                        <div class="download-info">
+                                            <i class="fas fa-file-pdf"></i>
+                                            <span class="download-name">${download.name}</span>
+                                            <span class="download-size">${download.size}</span>
+                                        </div>
+                                        <a href="${download.url}" class="btn btn-outline btn-sm">
+                                            <i class="fas fa-download"></i>
+                                            下载
+                                        </a>
+                                    </div>
+                                `).join('')}
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            // 显示模态框
+            document.getElementById('productModal').classList.add('active');
+            document.body.style.overflow = 'hidden';
+            
+            // 绑定标签页切换
+            bindTabEvents();
+        }
+
+        // 绑定标签页事件
+        function bindTabEvents() {
+            const tabBtns = document.querySelectorAll('.tab-btn');
+            tabBtns.forEach(btn => {
+                btn.addEventListener('click', function() {
+                    const tabId = this.dataset.tab;
+                    
+                    // 移除所有active类
+                    tabBtns.forEach(b => b.classList.remove('active'));
+                    document.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('active'));
+                    
+                    // 添加active类
+                    this.classList.add('active');
+                    document.getElementById(`tab-${tabId}`).classList.add('active');
+                });
+            });
+        }
+
+        // 关闭模态框
+        document.getElementById('modalClose').addEventListener('click', function() {
+            document.getElementById('productModal').classList.remove('active');
+            document.body.style.overflow = '';
+        });
+
+        // 点击模态框外部关闭
+        document.getElementById('productModal').addEventListener('click', function(e) {
+            if (e.target === this) {
+                this.classList.remove('active');
+                document.body.style.overflow = '';
+            }
+        });
+
+        // 对比功能
+        let compareList = [];
+
+        function toggleCompare(productId) {
+            const index = compareList.indexOf(productId);
+            if (index > -1) {
+                compareList.splice(index, 1);
+            } else {
+                if (compareList.length >= 4) {
+                    alert('最多可选择4款产品进行对比');
+                    return;
+                }
+                compareList.push(productId);
+            }
+            updateCompareBar();
+        }
+
+        function updateCompareBar() {
+            const compareBar = document.getElementById('compareBar');
+            const compareCount = document.getElementById('compareCount');
+            
+            compareCount.textContent = compareList.length;
+            
+            if (compareList.length > 0) {
+                compareBar.classList.add('active');
+            } else {
+                compareBar.classList.remove('active');
+            }
+        }
+
+        function bindCompareEvents() {
+            document.getElementById('clearCompare').addEventListener('click', function() {
+                compareList = [];
+                updateCompareBar();
+            });
+            
+            document.getElementById('startCompare').addEventListener('click', function() {
+                if (compareList.length < 2) {
+                    alert('请至少选择2款产品进行对比');
+                    return;
+                }
+                // 这里可以实现对比页面的跳转或弹窗
+                alert('对比功能开发中，已选择：' + compareList.join(', '));
+            });
+        }
+    </script>
+</body>
+</html>

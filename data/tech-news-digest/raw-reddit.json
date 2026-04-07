@@ -1,0 +1,143 @@
+{
+  "source": "reddit",
+  "fetched_at": "2026-03-31T07:51:19.431466+00:00",
+  "defaults_dir": "/home/tenbox/.openclaw/workspace/skills/tech-news-digest/config/defaults",
+  "config_dir": "/home/tenbox/.openclaw/workspace/config",
+  "hours": 24,
+  "cutoff": "2026-03-30T07:44:54.947002+00:00",
+  "subreddits_total": 13,
+  "subreddits_ok": 0,
+  "total_posts": 0,
+  "subreddits": [
+    {
+      "source_id": "reddit-localllama",
+      "source_type": "reddit",
+      "name": "r/LocalLLaMA",
+      "subreddit": "LocalLLaMA",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-cryptocurrency",
+      "source_type": "reddit",
+      "name": "r/CryptoCurrency",
+      "subreddit": "CryptoCurrency",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-machinelearning",
+      "source_type": "reddit",
+      "name": "r/MachineLearning",
+      "subreddit": "MachineLearning",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-artificial",
+      "source_type": "reddit",
+      "name": "r/artificial",
+      "subreddit": "artificial",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-ethereum",
+      "source_type": "reddit",
+      "name": "r/ethereum",
+      "subreddit": "ethereum",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-chatgpt",
+      "source_type": "reddit",
+      "name": "r/ChatGPT",
+      "subreddit": "ChatGPT",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-singularity",
+      "source_type": "reddit",
+      "name": "r/singularity",
+      "subreddit": "singularity",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-openai",
+      "source_type": "reddit",
+      "name": "r/OpenAI",
+      "subreddit": "OpenAI",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-bitcoin",
+      "source_type": "reddit",
+      "name": "r/Bitcoin",
+      "subreddit": "Bitcoin",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-anthropic",
+      "source_type": "reddit",
+      "name": "r/Anthropic",
+      "subreddit": "Anthropic",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-programming",
+      "source_type": "reddit",
+      "name": "r/programming",
+      "subreddit": "programming",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-defi",
+      "source_type": "reddit",
+      "name": "r/defi",
+      "subreddit": "defi",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    },
+    {
+      "source_id": "reddit-experienceddevs",
+      "source_type": "reddit",
+      "name": "r/ExperiencedDevs",
+      "subreddit": "ExperiencedDevs",
+      "status": "error",
+      "error": "<urlopen error _ssl.c:975: The handshake operation timed out>",
+      "count": 0,
+      "articles": []
+    }
+  ]
+}

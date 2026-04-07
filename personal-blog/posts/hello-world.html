@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>你好，世界！我的博客开张啦 | 小爪的博客</title>
+  <meta name="description" content="经过几天的折腾，这个像素风温馨博客终于上线了！">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="../index.html" class="logo">
+          <span>🐾</span>
+          <span>小爪的博客</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../posts.html" class="nav-link active">文章</a></li>
+          <li><a href="../tags.html" class="nav-link">标签</a></li>
+          <li><a href="../about.html" class="nav-link">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+      <article>
+        <!-- 文章头部 -->
+        <header class="article-header">
+          <div class="post-card-header" style="margin-bottom: var(--space-4);">
+            <time class="post-date">2026-03-27</time>
+            <div class="post-tags">
+              <a href="../tags.html#frontend" class="tag">前端</a>
+              <a href="../tags.html#pixel" class="tag">像素风</a>
+            </div>
+          </div>
+          <h1 class="article-title">你好，世界！我的博客开张啦 🎉</h1>
+          <div class="article-meta">
+            <span>✍️ 小爪</span>
+            <span>·</span>
+            <span>⏱️ 阅读约 3 分钟</span>
+          </div>
+        </header>
+
+        <!-- 文章正文 -->
+        <div class="article-content">
+          <p>
+            经过几天的折腾，这个像素风温馨博客终于上线了！从最初的想法到最终落地，记录一下这个过程中的一些心得和踩过的坑。
+          </p>
+
+          <h2>为什么选择像素风？</h2>
+          <p>
+            像素风有一种独特的魅力。它不像扁平化设计那样冰冷，也不像拟物化那样复杂。像素风格的界面让人想起小时候玩过的那些游戏——简单、纯粹、充满温度。
+          </p>
+          <p>
+            而且，像素风很适合用纯 CSS 实现，不需要复杂的图片资源，加载速度快，对性能友好。
+          </p>
+
+          <h2>设计过程</h2>
+          <p>
+            在设计这个博客的时候，我给自己定了几个原则：
+          </p>
+          <ul>
+            <li><strong>温馨</strong> - 用暖色调营造舒适感</li>
+            <li><strong>像素感</strong> - 硬阴影、像素字体、方块元素</li>
+            <li><strong>简洁</strong> - 没有多余的功能，专注阅读体验</li>
+            <li><strong>响应式</strong> - 手机、平板、电脑都要好看</li>
+          </ul>
+
+          <h2>技术实现</h2>
+          <p>
+            整个博客采用纯 HTML/CSS/JS 实现，没有使用任何前端框架。这样做有几个好处：
+          </p>
+          <ol>
+            <li>代码简单直观，容易维护</li>
+            <li>加载速度快，几乎零依赖</li>
+            <li>可以深入理解每个细节的实现</li>
+          </ol>
+
+          <p>
+            配色方案选择了奶油色背景 + 琥珀色点缀，整体感觉温暖舒适。字体方面，标题使用 Press Start 2P 像素字体，正文使用 Noto Sans SC 保证可读性。
+          </p>
+
+          <h2>一些小细节</h2>
+          <p>
+            为了让博客更有像素感，我加入了一些小细节：
+          </p>
+          <ul>
+            <li>硬阴影效果（box-shadow 模拟像素块）</li>
+            <li>像素风格的滚动条</li>
+            <li>悬停时的轻微位移效果</li>
+            <li>像素心形装饰</li>
+          </ul>
+
+          <h2>未来计划</h2>
+          <p>
+            这个博客刚刚起步，还有很多想法想要实现：
+          </p>
+          <ul>
+            <li>添加暗色模式切换</li>
+            <li>实现文章搜索功能</li>
+            <li>添加评论系统</li>
+            <li>优化移动端体验</li>
+          </ul>
+
+          <p>
+            希望这个小小的博客能成为一个记录生活、分享技术的地方。如果你也喜欢像素风，欢迎交流！
+          </p>
+
+          <div class="pixel-divider">◆ ◆ ◆</div>
+
+          <p style="text-align: center; color: var(--color-text-muted);">
+            感谢阅读！如果觉得不错，欢迎分享给朋友 👋
+          </p>
+        </div>
+      </article>
+
+      <!-- 文章底部导航 -->
+      <nav style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 2px dashed var(--color-border-light);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="spring-2026.html" class="btn btn-secondary" style="visibility: hidden;">
+            ← 上一篇
+          </a>
+          <a href="../posts.html" class="btn btn-pixel">
+            📚 全部文章
+          </a>
+          <a href="pixel-css.html" class="btn btn-secondary">
+            下一篇 →
+          </a>
+        </div>
+      </nav>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-text">
+          Made with <span class="pixel-heart"></span> by 小爪
+        </p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+          © 2026 小爪的博客 · 像素风温馨小窝
+        </p>
+        <ul class="footer-links">
+          <li><a href="https://github.com/devercry" class="footer-link" target="_blank">GitHub</a></li>
+          <li><a href="mailto:hello@example.com" class="footer-link">邮箱</a></li>
+          <li><a href="../rss.xml" class="footer-link">RSS</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,496 @@
+/**
+ * 精密仪器公司官网 - 响应式样式
+ * 断点: 320px / 375px / 414px / 768px / 1024px
+ */
+
+/* ========================================
+   桌面端 (1024px+)
+   ======================================== */
+@media (min-width: 1024px) {
+  /* 导航栏 */
+  .navbar-container {
+    padding: 0 var(--space-8);
+  }
+
+  .navbar-brand {
+    font-size: 1.5rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: var(--space-6);
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  /* Hero 区域 */
+  .hero {
+    padding: var(--space-20) var(--space-8);
+  }
+
+  .hero-title {
+    font-size: 3.5rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.25rem;
+  }
+
+  /* 产品网格 - 4列 */
+  .products-grid {
+    grid-template-columns: repeat(4, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* 特性网格 */
+  .features-grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+
+  /* 统计数据 */
+  .stats-grid {
+    grid-template-columns: repeat(4, 1fr);
+  }
+
+  /* 页脚 */
+  .footer-grid {
+    grid-template-columns: 2fr 1fr 1fr 1fr;
+  }
+
+  /* 容器 */
+  .container {
+    max-width: 1280px;
+  }
+}
+
+/* ========================================
+   平板端 (768px - 1023px)
+   ======================================== */
+@media (max-width: 1023px) and (min-width: 768px) {
+  /* 导航栏 */
+  .navbar-container {
+    padding: 0 var(--space-6);
+  }
+
+  .navbar-brand {
+    font-size: 1.375rem;
+  }
+
+  .navbar-nav {
+    display: flex;
+    gap: var(--space-4);
+  }
+
+  .navbar-nav a {
+    font-size: 0.9375rem;
+    padding: var(--space-2) var(--space-3);
+  }
+
+  .navbar-toggle {
+    display: none;
+  }
+
+  /* Hero 区域 */
+  .hero {
+    padding: var(--space-16) var(--space-6);
+  }
+
+  .hero-title {
+    font-size: 2.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 1.125rem;
+  }
+
+  /* 产品网格 - 2列 */
+  .products-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* 特性网格 */
+  .features-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-5);
+  }
+
+  /* 统计数据 */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-6);
+  }
+
+  /* 页脚 */
+  .footer-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-8);
+  }
+
+  /* 联系区域 */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  /* 容器 */
+  .container {
+    max-width: 100%;
+    padding: 0 var(--space-6);
+  }
+
+  /* 按钮 */
+  .btn {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.9375rem;
+  }
+}
+
+/* ========================================
+   大手机 (414px - 767px)
+   ======================================== */
+@media (max-width: 767px) and (min-width: 414px) {
+  /* 导航栏 */
+  .navbar-container {
+    padding: 0 var(--space-4);
+    height: 60px;
+  }
+
+  .navbar-brand {
+    font-size: 1.25rem;
+  }
+
+  .navbar-brand img {
+    height: 32px;
+  }
+
+  .navbar-nav {
+    display: none;
+  }
+
+  .navbar-nav.active {
+    display: flex;
+    position: fixed;
+    top: 60px;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: var(--bg-primary);
+    flex-direction: column;
+    padding: var(--space-4);
+    gap: 0;
+    z-index: 999;
+  }
+
+  .navbar-nav.active a {
+    padding: var(--space-4);
+    font-size: 1.125rem;
+    border-bottom: 1px solid var(--border-color);
+  }
+
+  .navbar-toggle {
+    display: flex;
+    width: 44px;
+    height: 44px;
+    align-items: center;
+    justify-content: center;
+  }
+
+  /* Hero 区域 */
+  .hero {
+    padding: var(--space-12) var(--space-4);
+    min-height: auto;
+  }
+
+  .hero-title {
+    font-size: 2rem;
+    line-height: 1.2;
+  }
+
+  .hero-subtitle {
+    font-size: 1rem;
+    margin-bottom: var(--space-6);
+  }
+
+  .hero-buttons {
+    flex-direction: column;
+    gap: var(--space-3);
+  }
+
+  .hero-buttons .btn {
+    width: 100%;
+    justify-content: center;
+  }
+
+  /* 产品网格 - 1列 */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .product-card {
+    padding: var(--space-4);
+  }
+
+  .product-card-image {
+    height: 200px;
+  }
+
+  .product-card-title {
+    font-size: 1.125rem;
+  }
+
+  /* 特性网格 */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+
+  .feature-card {
+    padding: var(--space-5);
+  }
+
+  /* 统计数据 */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-4);
+  }
+
+  .stat-item {
+    padding: var(--space-4);
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  /* 页脚 */
+  .footer-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+    text-align: center;
+  }
+
+  .footer-brand {
+    justify-content: center;
+  }
+
+  .footer-social {
+    justify-content: center;
+  }
+
+  /* 容器 */
+  .container {
+    padding: 0 var(--space-4);
+  }
+
+  /* 按钮 */
+  .btn {
+    padding: var(--space-3) var(--space-4);
+    font-size: 0.9375rem;
+    min-height: 44px;
+  }
+
+  .btn-lg {
+    padding: var(--space-4) var(--space-6);
+    font-size: 1rem;
+  }
+
+  /* 标题 */
+  .section-title {
+    font-size: 1.75rem;
+  }
+
+  .section-subtitle {
+    font-size: 1rem;
+  }
+
+  /* 段落 */
+  p {
+    font-size: 0.9375rem;
+  }
+
+  /* 表格横向滚动 */
+  .table-responsive {
+    overflow-x: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  .table-responsive table {
+    min-width: 100%;
+  }
+
+  /* 表单 */
+  .form-group {
+    margin-bottom: var(--space-4);
+  }
+
+  .form-input,
+  .form-textarea,
+  .form-select {
+    padding: var(--space-3) var(--space-4);
+    font-size: 16px; /* 防止iOS缩放 */
+    min-height: 44px;
+  }
+
+  /* 间距调整 */
+  .section {
+    padding: var(--space-12) 0;
+  }
+
+  /* 卡片 */
+  .card {
+    padding: var(--space-4);
+  }
+
+  /* 关于区域 */
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* 联系区域 */
+  .contact-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-6);
+  }
+
+  /* 新闻网格 */
+  .news-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-4);
+  }
+}
+
+/* ========================================
+   中等手机 (375px - 413px)
+   ======================================== */
+@media (max-width: 413px) and (min-width: 375px) {
+  /* 导航栏 */
+  .navbar-container {
+    padding: 0 var(--space-3);
+    height: 56px;
+  }
+
+  .navbar-brand {
+    font-size: 1.125rem;
+  }
+
+  .navbar-brand img {
+    height: 28px;
+  }
+
+  .navbar-nav.active {
+    top: 56px;
+  }
+
+  /* Hero 区域 */
+  .hero {
+    padding: var(--space-10) var(--space-3);
+  }
+
+  .hero-title {
+    font-size: 1.75rem;
+  }
+
+  .hero-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  /* 产品网格 */
+  .products-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .product-card-image {
+    height: 180px;
+  }
+
+  .product-card-title {
+    font-size: 1rem;
+  }
+
+  .product-card-description {
+    font-size: 0.875rem;
+  }
+
+  /* 特性网格 */
+  .features-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+
+  .feature-card {
+    padding: var(--space-4);
+  }
+
+  .feature-icon {
+    width: 48px;
+    height: 48px;
+  }
+
+  /* 统计数据 */
+  .stats-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: var(--space-3);
+  }
+
+  .stat-number {
+    font-size: 1.75rem;
+  }
+
+  .stat-label {
+    font-size: 0.8125rem;
+  }
+
+  /* 容器 */
+  .container {
+    padding: 0 var(--space-3);
+  }
+
+  /* 按钮 */
+  .btn {
+    padding: var(--space-2-5) var(--space-4);
+    font-size: 0.875rem;
+  }
+
+  .btn-lg {
+    padding: var(--space-3) var(--space-5);
+    font-size: 0.9375rem;
+  }
+
+  /* 标题 */
+  .section-title {
+    font-size: 1.5rem;
+  }
+
+  .section-subtitle {
+    font-size: 0.9375rem;
+  }
+
+  /* 段落 */
+  p {
+    font-size: 0.875rem;
+  }
+
+  /* 表单 */
+  .form-input,
+  .form-textarea,
+  .form-select {
+    font-size: 16px;
+    padding: var(--space-2-5) var(--space-3);
+  }
+
+  /* 间距 */
+  .section {
+    padding: var(--space-10) 0;
+  }
+
+  /* 页脚 */
+  .footer {
+    padding: var(--space-8) 0 var(--space-4);
+  }
+

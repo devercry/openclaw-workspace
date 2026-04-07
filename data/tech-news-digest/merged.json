@@ -1,0 +1,622 @@
+{
+  "generated": "2026-03-31T07:52:42.870816+00:00",
+  "input_sources": {
+    "rss_articles": 110,
+    "twitter_articles": 0,
+    "web_articles": 0,
+    "github_articles": 6,
+    "github_trending": 0,
+    "reddit_posts": 0,
+    "total_input": 116
+  },
+  "processing": {
+    "deduplication_applied": true,
+    "multi_source_merging": true,
+    "previous_digest_penalty": false,
+    "quality_scoring": true
+  },
+  "output_stats": {
+    "total_articles": 35,
+    "topics_count": 4,
+    "topic_distribution": {
+      "crypto": 8,
+      "ai-agent": 1,
+      "frontier-tech": 21,
+      "llm": 5
+    }
+  },
+  "topics": {
+    "crypto": {
+      "count": 8,
+      "articles": [
+        {
+          "title": "go-ethereum v1.17.2",
+          "link": "https://github.com/ethereum/go-ethereum/releases/tag/v1.17.2",
+          "date": "2026-03-30T11:24:52+00:00",
+          "summary": "<!-- EMF Suppressor (v1.17.2) --> This is a maintenance release with several important bug fixes. Notably, a critical issue in debug_executionWitness could previously corrupt node data, users relying...",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "github",
+          "source_name": "go-ethereum (Geth)",
+          "source_id": "go-ethereum-github",
+          "quality_score": 5.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "Crypto exchange KuCoin agrees to $500K settlement, ending CFTC case",
+          "link": "https://cointelegraph.com/news/kucoin-fined-500k-as-cftc-cases-ends?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "date": "2026-03-31T07:49:14+01:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Cointelegraph",
+          "source_id": "cointelegraph-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "Quantum computers need fewer qubits to crack crypto than thought: Google",
+          "link": "https://cointelegraph.com/news/quantum-computers-need-far-less-power-crack-crypto-says-google?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "date": "2026-03-31T07:27:02+01:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Cointelegraph",
+          "source_id": "cointelegraph-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "Dubai sets formal rules for crypto exchange-traded derivatives",
+          "link": "https://cointelegraph.com/news/dubai-vara-crypto-derivatives-framework-retail-leverage?utm_source=rss_feed&utm_medium=rss&utm_campaign=rss_partner_inbound",
+          "date": "2026-03-31T07:00:00+01:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Cointelegraph",
+          "source_id": "cointelegraph-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "New US Rule Seeks to Open $8T Retirement Market to Crypto",
+          "link": "https://decrypt.co/362838/new-us-rule-open-8t-retirement-market-crypto",
+          "date": "2026-03-31T05:46:15+00:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Decrypt",
+          "source_id": "decrypt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "US Charges Hacker Behind $53 Million Uranium Finance Exploit",
+          "link": "https://decrypt.co/362836/us-charges-hacker-53-million-uranium-finance-exploit",
+          "date": "2026-03-31T05:04:06+00:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Decrypt",
+          "source_id": "decrypt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "Senator Questions SEC Over Treatment of Trump-Linked Crypto Businesses",
+          "link": "https://decrypt.co/362821/senator-questions-sec-treatment-trump-linked-crypto",
+          "date": "2026-03-30T23:28:52+00:00",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "rss",
+          "source_name": "Decrypt",
+          "source_id": "decrypt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        },
+        {
+          "title": "foundry nightly-24ff91d9319b4a38dfa695eb2963726ffc2c349b",
+          "link": "https://github.com/foundry-rs/foundry/releases/tag/nightly-24ff91d9319b4a38dfa695eb2963726ffc2c349b",
+          "date": "2026-03-31T06:32:47+00:00",
+          "summary": "Other - refactor(cheatcodes): deduplicate base64 overload implementations (#13966) by @anim001k - feat(evm): add FoundryHardfork::Tempo variant (#13972) by @stevencartavia - refactor(cheatcodes):...",
+          "topics": [
+            "crypto"
+          ],
+          "source_type": "github",
+          "source_name": "Foundry",
+          "source_id": "foundry-github",
+          "quality_score": 2.0,
+          "primary_topic": "crypto",
+          "all_topics": [
+            "crypto"
+          ]
+        }
+      ]
+    },
+    "ai-agent": {
+      "count": 1,
+      "articles": [
+        {
+          "title": "agno v2.5.12",
+          "link": "https://github.com/agno-agi/agno/releases/tag/v2.5.12",
+          "date": "2026-03-30T22:36:29+00:00",
+          "summary": "What's Changed fix: preserve server tool blocks in Claude conversation history by @Mustafa-Esoofally in https://github.com/agno-agi/agno/pull/6879 [feat] Docling tool integration with tests and...",
+          "topics": [
+            "ai-agent"
+          ],
+          "source_type": "github",
+          "source_name": "Agno",
+          "source_id": "agno-github",
+          "quality_score": 5.0,
+          "primary_topic": "ai-agent",
+          "all_topics": [
+            "ai-agent"
+          ]
+        }
+      ]
+    },
+    "frontier-tech": {
+      "count": 21,
+      "articles": [
+        {
+          "title": "LobeHub IM Integration",
+          "link": "https://www.producthunt.com/products/lobehub",
+          "date": "2026-03-31T00:48:17-07:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Product Hunt",
+          "source_id": "producthunt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Metabase Data Studio",
+          "link": "https://www.producthunt.com/products/metabase",
+          "date": "2026-03-31T00:48:17-07:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Product Hunt",
+          "source_id": "producthunt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Unify",
+          "link": "https://www.producthunt.com/products/unify-5",
+          "date": "2026-03-31T00:48:12-07:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Product Hunt",
+          "source_id": "producthunt-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "4月月更启动！用文字记录你的每一个进步瞬间",
+          "link": "https://xie.infoq.cn/article/d7ac0e1c33765ac4c1631ff85?utm_source=rss&amp;utm_medium=article",
+          "date": "2026-03-31T13:51:36+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "InfoQ 中文",
+          "source_id": "infoq-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "OpenClaw 火了之后，企业真正缺的不是更聪明的龙虾，而是一套上岗体系",
+          "link": "https://www.infoq.cn/article/XSBT0gvHvFom2OdbOoYH?utm_source=rss&amp;utm_medium=article",
+          "date": "2026-03-31T14:52:40+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "InfoQ 中文",
+          "source_id": "infoq-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "构建大规模自治体系",
+          "link": "https://www.infoq.cn/article/E1wx7iizhZeSpM5Rb1jz?utm_source=rss&amp;utm_medium=article",
+          "date": "2026-03-31T14:00:00+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "InfoQ 中文",
+          "source_id": "infoq-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "微软推出WinApp CLI，统一Windows应用开发的工作流",
+          "link": "https://www.infoq.cn/article/BiPRRaKmJpEKhHuBcaMz?utm_source=rss&amp;utm_medium=article",
+          "date": "2026-03-31T11:00:00+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "InfoQ 中文",
+          "source_id": "infoq-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "T-Mobile Business Promo Codes and Deals",
+          "link": "https://www.wired.com/story/t-mobile-business-promo-code/",
+          "date": "2026-03-31T05:00:00+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Wired",
+          "source_id": "wired-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Litter-Robot Promo Codes and Deals: Up to $150 Off",
+          "link": "https://www.wired.com/story/litter-robot-promo-code/",
+          "date": "2026-03-31T05:00:00+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Wired",
+          "source_id": "wired-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Our Favorite Amazon Streaming Stick Is Almost Half Off",
+          "link": "https://www.wired.com/story/fire-tv-stick-max-deal-326/",
+          "date": "2026-03-30T17:58:39+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Wired",
+          "source_id": "wired-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "在热带海岛上，我们拍到了「极光」｜vivo X300 Ultra 短片",
+          "link": "https://www.ifanr.com/1660364?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
+          "date": "2026-03-31T05:38:25+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "爱范儿",
+          "source_id": "ifanr-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "国行苹果 AI 一手实测：等了两年终于来了，好用吗？",
+          "link": "https://www.ifanr.com/1660360?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
+          "date": "2026-03-31T03:22:01+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "爱范儿",
+          "source_id": "ifanr-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Floatboat 体验：一个人的公司，只需要一个办公软件",
+          "link": "https://www.ifanr.com/1660334?utm_source=rss&amp;utm_medium=rss&amp;utm_campaign=",
+          "date": "2026-03-31T02:48:43+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "爱范儿",
+          "source_id": "ifanr-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "[Sponsor] Material Security",
+          "link": "https://material.security/lp-cloud-office-security?utm_source=third-party&amp;utm_medium=email&amp;utm_campaign=20260330-daringfireball",
+          "date": "2026-03-30T21:23:20+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Daring Fireball",
+          "source_id": "daringfireball-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "‘The Brand Age’",
+          "link": "https://paulgraham.com/brandage.html",
+          "date": "2026-03-30T16:47:02+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Daring Fireball",
+          "source_id": "daringfireball-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "Macs of Unusual Size",
+          "link": "https://scottknaster.substack.com/p/macs-of-unusual-size",
+          "date": "2026-03-30T16:24:40+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "Daring Fireball",
+          "source_id": "daringfireball-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "不用可以先收藏 | 有备无患：我的逃生包和生存盒都装了啥？",
+          "link": "https://sspai.com/post/108027",
+          "date": "2026-03-31T11:31:02+08:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "少数派",
+          "source_id": "sspai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "派早报：vivo 举办 vivo X 系列春季新品发布会等",
+          "link": "https://sspai.com/post/108088",
+          "date": "2026-03-31T08:19:31+08:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "少数派",
+          "source_id": "sspai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "派评 | 近期值得关注的 App",
+          "link": "https://sspai.com/post/108075",
+          "date": "2026-03-30T18:16:36+08:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "少数派",
+          "source_id": "sspai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "How Roblox Uses AI to Translate 16 Languages in 100 Milliseconds",
+          "link": "https://blog.bytebytego.com/p/how-roblox-uses-ai-to-translate-16",
+          "date": "2026-03-30T15:33:10+00:00",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "rss",
+          "source_name": "ByteByteGo",
+          "source_id": "bytebytego-rss",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        },
+        {
+          "title": "picoclaw nightly",
+          "link": "https://github.com/sipeed/picoclaw/releases/tag/nightly",
+          "date": "2026-03-31T00:54:18+00:00",
+          "summary": "Nightly build for v0.2.4-nightly.20260331.4d348247 This is an automated build and may be unstable. Use with caution. Full Changelog: https://github.com/sipeed/picoclaw/compare/v0.2.4...main",
+          "topics": [
+            "frontier-tech"
+          ],
+          "source_type": "github",
+          "source_name": "Sipeed PicoClaw",
+          "source_id": "picoclaw-github",
+          "quality_score": 2.0,
+          "primary_topic": "frontier-tech",
+          "all_topics": [
+            "frontier-tech"
+          ]
+        }
+      ]
+    },
+    "llm": {
+      "count": 5,
+      "articles": [
+        {
+          "title": "瑞声科技公开人形机器人感知解决方案，释放机器人业务加速落地信号",
+          "link": "https://www.qbitai.com/2026/03/393883.html",
+          "date": "2026-03-31T06:06:40+00:00",
+          "topics": [
+            "llm",
+            "ai-agent"
+          ],
+          "source_type": "rss",
+          "source_name": "量子位 QbitAI",
+          "source_id": "qbitai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "llm",
+          "all_topics": [
+            "llm",
+            "ai-agent"
+          ]
+        },
+        {
+          "title": "2700GB高质量数据，训出空间智能SOTA，背后秘诀全栈开源",
+          "link": "https://www.qbitai.com/2026/03/393864.html",
+          "date": "2026-03-31T05:53:04+00:00",
+          "topics": [
+            "llm",
+            "ai-agent"
+          ],
+          "source_type": "rss",
+          "source_name": "量子位 QbitAI",
+          "source_id": "qbitai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "llm",
+          "all_topics": [
+            "llm",
+            "ai-agent"
+          ]
+        },
+        {
+          "title": "玻色量子完成10亿元B轮融资，“十五五”规划专用量子计算机赛道唯一代表！",
+          "link": "https://www.qbitai.com/2026/03/393856.html",
+          "date": "2026-03-31T05:05:33+00:00",
+          "topics": [
+            "llm",
+            "ai-agent"
+          ],
+          "source_type": "rss",
+          "source_name": "量子位 QbitAI",
+          "source_id": "qbitai-rss",
+          "quality_score": 2.0,
+          "primary_topic": "llm",
+          "all_topics": [
+            "llm",
+            "ai-agent"
+          ]
+        },
+        {
+          "title": "vllm v0.18.1",
+          "link": "https://github.com/vllm-project/vllm/releases/tag/v0.18.1",
+          "date": "2026-03-31T00:53:26+00:00",
+          "summary": "This is a patch release on top of v0.18.0 to address a few issues: - Change default SM100 MLA prefill backend back to TRT-LLM (#38562) - Fix mock.patch resolution failure for...",
+          "topics": [
+            "llm"
+          ],
+          "source_type": "github",
+          "source_name": "vLLM",
+          "source_id": "vllm-github",
+          "quality_score": 2.0,
+          "primary_topic": "llm",
+          "all_topics": [
+            "llm"
+          ]
+        },
+        {
+          "title": "OpenViking v0.3.1",
+          "link": "https://github.com/volcengine/OpenViking/releases/tag/v0.3.1",
+          "date": "2026-03-31T07:15:45+00:00",
+          "summary": "What's Changed feat(ast): add PHP tree-sitter support by @yangxinxin-7 in https://github.com/volcengine/OpenViking/pull/1087 feat(ci): add multi-platform API test support for 5 platforms by...",
+          "topics": [
+            "llm"
+          ],
+          "source_type": "github",
+          "source_name": "OpenViking",
+          "source_id": "openviking-github",
+          "quality_score": 2.0,
+          "primary_topic": "llm",
+          "all_topics": [
+            "llm"
+          ]
+        }
+      ]
+    }
+  }
+}

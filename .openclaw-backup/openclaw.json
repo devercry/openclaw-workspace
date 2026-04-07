@@ -1,0 +1,157 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-23T07:15:30.545Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-23T06:48:27.885Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "tenbox": {
+        "baseUrl": "http://10.0.2.3/v1",
+        "apiKey": "tenbox",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "default",
+            "name": "Default (TenBox Proxy)"
+          }
+        ]
+      },
+      "custom-coding-dashscope-aliyuncs-com": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "sk-sp-0d77815efb7e4c81b95184598ea25f3a",
+        "api": "openai-completions",
+        "models": [
+          {
+            "id": "kimi-k2.5",
+            "name": "kimi-k2.5 (Custom Provider)",
+            "reasoning": false,
+            "input": [
+              "text"
+            ],
+            "cost": {
+              "input": 0,
+              "output": 0,
+              "cacheRead": 0,
+              "cacheWrite": 0
+            },
+            "contextWindow": 16000,
+            "maxTokens": 4096
+          }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": {
+        "primary": "custom-coding-dashscope-aliyuncs-com/kimi-k2.5"
+      },
+      "models": {
+        "custom-coding-dashscope-aliyuncs-com/kimi-k2.5": {
+          "alias": "kimi-k2.5"
+        }
+      },
+      "compaction": {
+        "mode": "safeguard"
+      }
+    }
+  },
+  "tools": {
+    "profile": "full"
+  },
+  "commands": {
+    "native": "auto",
+    "nativeSkills": "auto",
+    "restart": true,
+    "ownerDisplay": "raw"
+  },
+  "channels": {
+    "qqbot": {
+      "appId": "1903245539",
+      "clientSecret": "b6b6b6c8eAgCiFmJqNuRzX5dBjHpOxW5",
+      "asr": {
+        "enabled": false
+      },
+      "enabled": true
+    },
+    "dingtalk": {
+      "clientId": "dinghksxb03tvsy1c5sd",
+      "clientSecret": "XtTbSK7rBZSravAPJXEpQhqUCrQCuouIEz_B3R2DTNh79mgFpFU9OzW9R4uABALp",
+      "enableAICard": false,
+      "enabled": true
+    }
+  },
+  "gateway": {
+    "mode": "local",
+    "bind": "lan",
+    "controlUi": {
+      "allowedOrigins": [
+        "*"
+      ],
+      "allowInsecureAuth": true,
+      "dangerouslyDisableDeviceAuth": true
+    },
+    "auth": {
+      "mode": "token",
+      "token": "tenbox"
+    }
+  },
+  "plugins": {
+    "entries": {
+      "channels": {
+        "enabled": true
+      },
+      "graph-memory": {
+        "enabled": true,
+        "config": {
+          "llm": {
+            "apiKey": "sk-sp-0d77815efb7e4c81b95184598ea25f3a",
+            "baseURL": "https://coding.dashscope.aliyuncs.com/v1",
+            "model": "kimi-k2.5"
+          },
+          "embedding": {
+            "apiKey": "sk-12f7afd1a0344cbe9cc96e70ccfdc779",
+            "baseURL": "https://dashscope.aliyuncs.com/compatible-mode/v1",
+            "model": "text-embedding-v3",
+            "dimensions": 1024
+          }
+        }
+      }
+    },
+    "slots": {
+      "contextEngine": "graph-memory"
+    },
+    "installs": {
+      "channels": {
+        "source": "npm",
+        "spec": "@openclaw-china/channels",
+        "installPath": "/home/tenbox/.openclaw/extensions/channels",
+        "version": "2026.3.22",
+        "resolvedName": "@openclaw-china/channels",
+        "resolvedVersion": "2026.3.22",
+        "resolvedSpec": "@openclaw-china/channels@2026.3.22",
+        "integrity": "sha512-RA02kY9ZGzP2kAC39XPauCKOiQmWj/RGaEyRPw6oPpuzx0K3FQHynLCrlU8ZKopq84NLD/NEy6zjWKhHy2uZag==",
+        "shasum": "8aa97a3f879b81f0d6ab8dc365918818a25a8f4c",
+        "resolvedAt": "2026-03-23T06:42:30.656Z",
+        "installedAt": "2026-03-23T06:43:59.276Z"
+      },
+      "graph-memory": {
+        "source": "path",
+        "spec": "/home/tenbox/.openclaw/extensions/graph-memory",
+        "installPath": "/home/tenbox/.openclaw/extensions/graph-memory",
+        "version": "1.5.5",
+        "resolvedName": "graph-memory",
+        "resolvedVersion": "1.5.5",
+        "resolvedSpec": "/home/tenbox/.openclaw/extensions/graph-memory",
+        "installedAt": "2026-03-23T07:34:00.000Z"
+      }
+    }
+  }
+}

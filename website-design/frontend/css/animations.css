@@ -1,0 +1,929 @@
+/**
+ * 精密仪器公司官网 - 动画样式
+ * Animation Developer
+ * 包含：滚动动画、悬停效果、过渡效果、微交互
+ */
+
+/* ========================================
+   1. 基础动画类
+   ======================================== */
+
+/* 初始状态 - 隐藏 */
+.anim-hidden {
+  opacity: 0;
+}
+
+/* 淡入效果 */
+.anim-fade-in {
+  opacity: 0;
+  transform: translateY(0);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-fade-in.visible {
+  opacity: 1;
+}
+
+/* 从下方滑入 */
+.anim-slide-up {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-slide-up.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 从左侧滑入 */
+.anim-slide-left {
+  opacity: 0;
+  transform: translateX(-60px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-slide-left.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 从右侧滑入 */
+.anim-slide-right {
+  opacity: 0;
+  transform: translateX(60px);
+  transition: opacity 0.6s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.6s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-slide-right.visible {
+  opacity: 1;
+  transform: translateX(0);
+}
+
+/* 缩放进入 */
+.anim-scale-in {
+  opacity: 0;
+  transform: scale(0.9);
+  transition: opacity 0.5s cubic-bezier(0.4, 0, 0.2, 1),
+              transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.anim-scale-in.visible {
+  opacity: 1;
+  transform: scale(1);
+}
+
+/* ========================================
+   2. 延迟类（用于错开动画）
+   ======================================== */
+
+.anim-delay-1 { transition-delay: 0.1s; }
+.anim-delay-2 { transition-delay: 0.2s; }
+.anim-delay-3 { transition-delay: 0.3s; }
+.anim-delay-4 { transition-delay: 0.4s; }
+.anim-delay-5 { transition-delay: 0.5s; }
+.anim-delay-6 { transition-delay: 0.6s; }
+
+/* ========================================
+   3. 悬停效果 - 产品卡片
+   ======================================== */
+
+/* 产品卡片悬停效果 */
+.product-card {
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover {
+  transform: translateY(-8px) scale(1.02);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+}
+
+[data-theme="dark"] .product-card:hover {
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4);
+}
+
+/* 产品卡片图片悬停缩放 */
+.product-card .card-image img,
+.product-image img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.product-card:hover .card-image img,
+.product-image:hover img {
+  transform: scale(1.08);
+}
+
+/* ========================================
+   4. 悬停效果 - 按钮
+   ======================================== */
+
+/* 按钮基础过渡 */
+.btn,
+button[type="submit"],
+.btn-primary,
+.btn-secondary {
+  position: relative;
+  overflow: hidden;
+  transition: transform 0.2s ease,
+              box-shadow 0.2s ease,
+              background-color 0.3s ease;
+}
+
+/* 按钮悬停光效 */
+.btn::before,
+button[type="submit"]::before,
+.btn-primary::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 0;
+  height: 0;
+  background: radial-gradient(circle, rgba(255, 255, 255, 0.3) 0%, transparent 70%);
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  transition: width 0.4s ease, height 0.4s ease;
+  pointer-events: none;
+}
+
+.btn:hover::before,
+button[type="submit"]:hover::before,
+.btn-primary:hover::before {
+  width: 200%;
+  height: 200%;
+}
+
+.btn:hover,
+button[type="submit"]:hover,
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(37, 99, 235, 0.3);
+}
+
+.btn:active,
+button[type="submit"]:active,
+.btn-primary:active {
+  transform: translateY(0);
+  box-shadow: 0 4px 10px rgba(37, 99, 235, 0.2);
+}
+
+/* 涟漪效果容器 */
+.btn-ripple {
+  position: relative;
+  overflow: hidden;
+}
+
+.ripple {
+  position: absolute;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.5);
+  transform: scale(0);
+  animation: ripple-effect 0.6s linear;
+  pointer-events: none;
+}
+
+@keyframes ripple-effect {
+  to {
+    transform: scale(4);
+    opacity: 0;
+  }
+}
+
+/* ========================================
+   5. 悬停效果 - 导航链接
+   ======================================== */
+
+/* 导航链接下划线动画 */
+.nav-link,
+.navbar-nav a,
+.footer-links a {
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.nav-link::after,
+.navbar-nav a::after,
+.footer-links a::after {
+  content: '';
+  position: absolute;
+  bottom: -2px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background: var(--color-primary);
+  transition: width 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.nav-link:hover::after,
+.navbar-nav a:hover::after,
+.footer-links a:hover::after {
+  width: 100%;
+}
+
+.nav-link:hover,
+.navbar-nav a:hover,
+.footer-links a:hover {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   6. 悬停效果 - 图片
+   ======================================== */
+
+/* 图片悬停缩放 */
+.img-hover-zoom {
+  overflow: hidden;
+}
+
+.img-hover-zoom img {
+  transition: transform 0.5s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.img-hover-zoom:hover img {
+  transform: scale(1.1);
+}
+
+/* 图片遮罩效果 */
+.img-overlay {
+  position: relative;
+  overflow: hidden;
+}
+
+.img-overlay::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: linear-gradient(to top, rgba(0, 0, 0, 0.5), transparent);
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.img-overlay:hover::after {
+  opacity: 1;
+}
+
+/* ========================================
+   7. 页面加载进度条
+   ======================================== */
+
+.page-loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--color-bg-secondary);
+  z-index: 9999;
+  opacity: 1;
+  transition: opacity 0.3s ease;
+}
+
+.page-loader.hidden {
+  opacity: 0;
+  pointer-events: none;
+}
+
+.page-loader-bar {
+  height: 100%;
+  width: 0;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  transition: width 0.2s ease;
+}
+
+.page-loader.loaded .page-loader-bar {
+  width: 100%;
+  transition: width 0.3s ease;
+}
+
+/* ========================================
+   8. 微交互 - 按钮点击反馈
+   ======================================== */
+
+/* 按钮点击缩放 */
+.btn-click-effect {
+  transition: transform 0.15s ease;
+}
+
+.btn-click-effect:active {
+  transform: scale(0.95);
+}
+
+/* ========================================
+   9. 微交互 - 表单输入焦点
+   ======================================== */
+
+/* 输入框焦点动画 */
+.form-group input,
+.form-group textarea,
+.form-group select,
+input[type="text"],
+input[type="email"],
+input[type="tel"],
+textarea {
+  transition: border-color 0.3s ease,
+              box-shadow 0.3s ease,
+              transform 0.2s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus,
+.form-group select:focus,
+input[type="text"]:focus,
+input[type="email"]:focus,
+input[type="tel"]:focus,
+textarea:focus {
+  border-color: var(--color-primary);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1);
+  transform: translateY(-1px);
+}
+
+/* 输入框标签动画 */
+.form-group label {
+  transition: color 0.3s ease, transform 0.3s ease;
+}
+
+.form-group input:focus + label,
+.form-group textarea:focus + label {
+  color: var(--color-primary);
+}
+
+/* ========================================
+   10. 微交互 - 成功/错误状态
+   ======================================== */
+
+/* 成功状态 */
+.form-success {
+  animation: form-success-pulse 0.5s ease;
+}
+
+@keyframes form-success-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.02); box-shadow: 0 0 20px rgba(34, 197, 94, 0.3); }
+  100% { transform: scale(1); }
+}
+
+/* 错误状态 */
+.form-error-shake {
+  animation: form-error-shake 0.5s ease;
+}
+
+@keyframes form-error-shake {
+  0%, 100% { transform: translateX(0); }
+  20% { transform: translateX(-10px); }
+  40% { transform: translateX(10px); }
+  60% { transform: translateX(-5px); }
+  80% { transform: translateX(5px); }
+}
+
+/* 表单错误边框闪烁 */
+.form-error-border {
+  animation: form-error-border 0.5s ease;
+}
+
+@keyframes form-error-border {
+  0%, 100% { border-color: var(--color-border); }
+  25% { border-color: #ef4444; }
+  50% { border-color: var(--color-border); }
+  75% { border-color: #ef4444; }
+}
+
+/* ========================================
+   11. 加载骨架屏
+   ======================================== */
+
+.skeleton {
+  background: linear-gradient(90deg, 
+    var(--color-bg-secondary) 25%, 
+    var(--color-bg-tertiary) 50%, 
+    var(--color-bg-secondary) 75%
+  );
+  background-size: 200% 100%;
+  animation: skeleton-loading 1.5s ease-in-out infinite;
+  border-radius: var(--radius-sm);
+}
+
+@keyframes skeleton-loading {
+  0% { background-position: 200% 0; }
+  100% { background-position: -200% 0; }
+}
+
+.skeleton-text {
+  height: 1em;
+  margin-bottom: 0.5em;
+}
+
+.skeleton-title {
+  height: 1.5em;
+  width: 60%;
+  margin-bottom: 0.75em;
+}
+
+.skeleton-image {
+  height: 200px;
+  width: 100%;
+}
+
+.skeleton-card {
+  padding: var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+}
+
+/* ========================================
+   12. 数字计数动画
+   ======================================== */
+
+.counter-number {
+  display: inline-block;
+  font-variant-numeric: tabular-nums;
+}
+
+.counter-number.counting {
+  animation: counter-pulse 0.3s ease;
+}
+
+@keyframes counter-pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); }
+}
+
+/* ========================================
+   13. 进度条动画
+   ======================================== */
+
+.progress-bar {
+  height: 8px;
+  background: var(--color-bg-secondary);
+  border-radius: var(--radius-full);
+  overflow: hidden;
+}
+
+.progress-bar-fill {
+  height: 100%;
+  background: linear-gradient(90deg, var(--color-primary), var(--color-secondary));
+  border-radius: var(--radius-full);
+  width: 0;
+  transition: width 1s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.progress-bar-fill.animate {
+  width: var(--progress, 0%);
+}
+
+/* 条纹进度条 */
+.progress-bar-striped .progress-bar-fill {
+  background-image: linear-gradient(
+    45deg,
+    rgba(255, 255, 255, 0.15) 25%,
+    transparent 25%,
+    transparent 50%,
+    rgba(255, 255, 255, 0.15) 50%,
+    rgba(255, 255, 255, 0.15) 75%,
+    transparent 75%,
+    transparent
+  );
+  background-size: 1rem 1rem;
+  animation: progress-stripes 1s linear infinite;
+}
+
+@keyframes progress-stripes {
+  0% { background-position: 1rem 0; }
+  100% { background-position: 0 0; }
+}
+
+/* ========================================
+   14. Hero区特效
+   ======================================== */
+
+/* 背景渐变动画 */
+.hero-gradient-animate {
+  background: linear-gradient(
+    135deg,
+    var(--color-primary) 0%,
+    var(--color-secondary) 50%,
+    var(--color-accent) 100%
+  );
+  background-size: 200% 200%;
+  animation: gradient-shift 8s ease infinite;
+}
+
+@keyframes gradient-shift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* 装饰元素浮动效果 */
+.float-element {
+  animation: float 6s ease-in-out infinite;
+}
+
+.float-element-slow {
+  animation: float 8s ease-in-out infinite;
+}
+
+.float-element-fast {
+  animation: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-20px); }
+}
+
+/* 浮动延迟 */
+.float-delay-1 { animation-delay: 0s; }
+.float-delay-2 { animation-delay: 1s; }
+.float-delay-3 { animation-delay: 2s; }
+.float-delay-4 { animation-delay: 3s; }
+
+/* 旋转装饰 */
+.rotate-slow {
+  animation: rotate-slow 20s linear infinite;
+}
+
+@keyframes rotate-slow {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 脉冲光环 */
+.pulse-ring {
+  position: relative;
+}
+
+.pulse-ring::before {
+  content: '';
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 100%;
+  height: 100%;
+  border-radius: 50%;
+  border: 2px solid var(--color-primary);
+  transform: translate(-50%, -50%);
+  animation: pulse-ring 2s ease-out infinite;
+}
+
+@keyframes pulse-ring {
+  0% {
+    transform: translate(-50%, -50%) scale(1);
+    opacity: 1;
+  }
+  100% {
+    transform: translate(-50%, -50%) scale(1.5);
+    opacity: 0;
+  }
+}
+
+/* 文字逐字显示效果 */
+.text-reveal {
+  opacity: 0;
+  transform: translateY(20px);
+  display: inline-block;
+}
+
+.text-reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+/* 打字机效果光标 */
+.typewriter-cursor {
+  display: inline-block;
+  width: 2px;
+  height: 1em;
+  background: var(--color-primary);
+  margin-left: 2px;
+  animation: cursor-blink 1s step-end infinite;
+}
+
+@keyframes cursor-blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+/* ========================================
+   15. 页面过渡效果
+   ======================================== */
+
+/* 页面淡入 */
+.page-transition {
+  opacity: 0;
+  animation: page-fade-in 0.5s ease forwards;
+}
+
+@keyframes page-fade-in {
+  to { opacity: 1; }
+}
+
+/* 内容区域滑入 */
+.content-slide-up {
+  opacity: 0;
+  transform: translateY(30px);
+  animation: content-slide-up 0.6s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes content-slide-up {
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* ========================================
+   16. 滚动指示器
+   ======================================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 8px;
+  color: var(--color-text-secondary);
+  font-size: var(--text-sm);
+  animation: scroll-indicator-bounce 2s ease-in-out infinite;
+}
+
+.scroll-indicator svg {
+  width: 24px;
+  height: 24px;
+  animation: scroll-indicator-arrow 2s ease-in-out infinite;
+}
+
+@keyframes scroll-indicator-bounce {
+  0%, 100% { transform: translateX(-50%) translateY(0); }
+  50% { transform: translateX(-50%) translateY(10px); }
+}
+
+@keyframes scroll-indicator-arrow {
+  0%, 100% { opacity: 1; transform: translateY(0); }
+  50% { opacity: 0.5; transform: translateY(5px); }
+}
+
+/* ========================================
+   17. 通知/Toast动画
+   ======================================== */
+
+.toast {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  padding: var(--space-md) var(--space-lg);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.2);
+  z-index: 9999;
+  transform: translateX(120%);
+  opacity: 0;
+  transition: transform 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+              opacity 0.4s ease;
+}
+
+.toast.show {
+  transform: translateX(0);
+  opacity: 1;
+}
+
+.toast.hide {
+  transform: translateX(120%);
+  opacity: 0;
+}
+
+.toast-success {
+  border-left: 4px solid #22c55e;
+}
+
+.toast-error {
+  border-left: 4px solid #ef4444;
+}
+
+.toast-info {
+  border-left: 4px solid var(--color-primary);
+}
+
+/* ========================================
+   18. 模态框动画
+   ======================================== */
+
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 1000;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease;
+}
+
+.modal-overlay.active {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.9);
+  background: var(--color-surface);
+  border-radius: var(--radius-lg);
+  padding: var(--space-xl);
+  z-index: 1001;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity 0.3s ease, visibility 0.3s ease, transform 0.3s ease;
+}
+
+.modal-overlay.active + .modal-content,
+.modal-content.active {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, -50%) scale(1);
+}
+
+/* ========================================
+   19. 卡片翻转效果
+   ======================================== */
+
+.flip-card {
+  perspective: 1000px;
+}
+
+.flip-card-inner {
+  position: relative;
+  width: 100%;
+  height: 100%;
+  transition: transform 0.6s;
+  transform-style: preserve-3d;
+}
+
+.flip-card:hover .flip-card-inner {
+  transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  border-radius: var(--radius-lg);
+}
+
+.flip-card-back {
+  transform: rotateY(180deg);
+  background: var(--color-surface);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-lg);
+}
+
+/* ========================================
+   20. 图标动画
+   ======================================== */
+
+/* 图标悬停旋转 */
+.icon-rotate:hover {
+  animation: icon-spin 0.5s ease;
+}
+
+@keyframes icon-spin {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
+/* 图标弹跳 */
+.icon-bounce:hover {
+  animation: icon-bounce 0.5s ease;
+}
+
+@keyframes icon-bounce {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+}
+
+/* 图标脉冲 */
+.icon-pulse {
+  animation: icon-pulse 2s ease-in-out infinite;
+}
+
+@keyframes icon-pulse {
+  0%, 100% { transform: scale(1); }
+  50% { transform: scale(1.1); }
+}
+
+/* ========================================
+   21. 列表项依次显示
+   ======================================== */
+
+.stagger-list > * {
+  opacity: 0;
+  transform: translateY(20px);
+}
+
+.stagger-list > *.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.stagger-list > *:nth-child(1).visible { transition-delay: 0.05s; }
+.stagger-list > *:nth-child(2).visible { transition-delay: 0.1s; }
+.stagger-list > *:nth-child(3).visible { transition-delay: 0.15s; }
+.stagger-list > *:nth-child(4).visible { transition-delay: 0.2s; }
+.stagger-list > *:nth-child(5).visible { transition-delay: 0.25s; }
+.stagger-list > *:nth-child(6).visible { transition-delay: 0.3s; }
+.stagger-list > *:nth-child(7).visible { transition-delay: 0.35s; }
+.stagger-list > *:nth-child(8).visible { transition-delay: 0.4s; }
+
+/* ========================================
+   22. 无障碍 - 减少动画
+   ======================================== */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
+  }
+  
+  .anim-fade-in,
+  .anim-slide-up,
+  .anim-slide-left,
+  .anim-slide-right,
+  .anim-scale-in {
+    opacity: 1;
+    transform: none;
+  }
+  
+  .float-element,
+  .float-element-slow,
+  .float-element-fast,
+  .rotate-slow,
+  .pulse-ring::before,
+  .skeleton,
+  .progress-bar-striped .progress-bar-fill {
+    animation: none;
+  }
+  
+  .scroll-indicator,
+  .typewriter-cursor {
+    animation: none;
+  }
+}
+
+/* ========================================
+   23. 性能优化
+   ======================================== */
+
+/* 使用 will-change 优化动画性能 */
+.anim-fade-in,
+.anim-slide-up,
+.anim-slide-left,
+.anim-slide-right,
+.anim-scale-in,
+.float-element,
+.float-element-slow,
+.float-element-fast {
+  will-change: transform, opacity;
+}
+
+/* 动画完成后移除 will-change */
+.anim-fade-in.visible,
+.anim-slide-up.visible,
+.anim-slide-left.visible,
+.anim-slide-right.visible,
+.anim-scale-in.visible {
+  will-change: auto;
+}
+
+/* GPU 加速 */
+.product-card,
+.btn,
+.img-hover-zoom img,
+.nav-link::after {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+}

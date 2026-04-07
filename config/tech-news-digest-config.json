@@ -1,0 +1,21 @@
+{
+  "discord": {
+    "channel_id": "#tech-news"
+  },
+  "email": {
+    "to": "1982497574@qq.com",
+    "from": "Tech News Digest <bot@example.com>"
+  },
+  "delivery": {
+    "discord": true,
+    "email": true
+  },
+  "digest": {
+    "mode": "daily",
+    "language": "Chinese",
+    "time_window_hours": 48,
+    "freshness": "pd",
+    "items_per_section": 5,
+    "blog_picks_count": 3
+  }
+}

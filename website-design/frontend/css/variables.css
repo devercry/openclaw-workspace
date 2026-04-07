@@ -1,0 +1,171 @@
+/**
+ * variables.css - CSS 变量定义
+ * 卓立汉光风格：白色背景 + 蓝色品牌色
+ */
+
+:root {
+  /* ========================================
+     1. 颜色系统 - 白色主题 + 蓝色品牌
+     ======================================== */
+  
+  /* 品牌色 - 专业蓝色系 */
+  --color-primary: #0066cc;
+  --color-primary-dark: #0055aa;
+  --color-primary-light: #0088ff;
+  --color-primary-lighter: #e6f2ff;
+  
+  /* 背景色 - 白色主题 */
+  --color-bg-primary: #ffffff;
+  --color-bg-secondary: #f5f7fa;
+  --color-bg-tertiary: #eef2f7;
+  --color-bg-card: #ffffff;
+  --color-surface: #ffffff;
+  
+  /* 文字色 */
+  --color-text-primary: #333333;
+  --color-text-secondary: #666666;
+  --color-text-tertiary: #999999;
+  --color-text-muted: #aaaaaa;
+  
+  /* 边框色 */
+  --color-border: #e0e0e0;
+  --color-border-light: #eeeeee;
+  --color-border-dark: #cccccc;
+  
+  /* 状态色 */
+  --color-success: #28a745;
+  --color-warning: #ffc107;
+  --color-error: #dc3545;
+  --color-info: #17a2b8;
+  
+  /* 辅助色 */
+  --color-accent: #0066cc;
+  --color-accent-dark: #0055aa;
+  --color-on-primary: #ffffff;
+  
+  /* ========================================
+     2. 字体系统
+     ======================================== */
+  
+  --font-family-primary: -apple-system, BlinkMacSystemFont, "Segoe UI", "PingFang SC", "Hiragino Sans GB", "Microsoft YaHei", "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-mono: "SF Mono", Monaco, "Cascadia Code", "Roboto Mono", Consolas, "Courier New", monospace;
+  
+  /* 字体大小 */
+  --font-size-display: 3rem;
+  --font-size-headline: 2.25rem;
+  --font-size-title-large: 1.75rem;
+  --font-size-title-medium: 1.5rem;
+  --font-size-title-small: 1.25rem;
+  --font-size-body-large: 1rem;
+  --font-size-body-medium: 0.875rem;
+  --font-size-body-small: 0.75rem;
+  --font-size-label-large: 0.875rem;
+  --font-size-label-medium: 0.75rem;
+  --font-size-label-small: 0.625rem;
+  
+  /* 字重 */
+  --font-weight-regular: 400;
+  --font-weight-medium: 500;
+  --font-weight-semibold: 600;
+  --font-weight-bold: 700;
+  
+  /* 行高 */
+  --line-height-tight: 1.25;
+  --line-height-normal: 1.5;
+  --line-height-relaxed: 1.75;
+  
+  /* ========================================
+     3. 间距系统
+     ======================================== */
+  
+  --space-0: 0;
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.25rem;
+  --space-6: 1.5rem;
+  --space-8: 2rem;
+  --space-10: 2.5rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-20: 5rem;
+  --space-24: 6rem;
+  
+  --space-section: 5rem;
+  
+  /* ========================================
+     4. 圆角系统
+     ======================================== */
+  
+  --radius-none: 0;
+  --radius-sm: 0.25rem;
+  --radius-md: 0.5rem;
+  --radius-lg: 0.75rem;
+  --radius-xl: 1rem;
+  --radius-2xl: 1.5rem;
+  --radius-full: 9999px;
+  
+  --radius-button: 0.375rem;
+  --radius-card: 0.5rem;
+  --radius-chip: 1rem;
+  --radius-input: 0.375rem;
+  
+  /* ========================================
+     5. 阴影系统
+     ======================================== */
+  
+  --shadow-none: none;
+  --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+  --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  --shadow-2xl: 0 25px 50px -12px rgba(0, 0, 0, 0.25);
+  
+  --shadow-card: 0 2px 8px rgba(0, 0, 0, 0.08);
+  --shadow-card-hover: 0 8px 24px rgba(0, 0, 0, 0.12);
+  --shadow-nav: 0 2px 10px rgba(0, 0, 0, 0.08);
+  
+  /* ========================================
+     6. 过渡系统
+     ======================================== */
+  
+  --transition-fast: 150ms ease;
+  --transition-normal: 250ms ease;
+  --transition-slow: 350ms ease;
+  
+  /* ========================================
+     7. 容器系统
+     ======================================== */
+  
+  --container-max: 1280px;
+  --container-narrow: 960px;
+  
+  /* ========================================
+     8. Z-index 层级
+     ======================================== */
+  
+  --z-dropdown: 100;
+  --z-sticky: 200;
+  --z-nav: 300;
+  --z-modal: 400;
+  --z-popover: 500;
+  --z-tooltip: 600;
+  --z-toast: 700;
+}
+
+/* 暗色主题（可选） */
+[data-theme="dark"] {
+  --color-bg-primary: #1a1a2e;
+  --color-bg-secondary: #16213e;
+  --color-bg-tertiary: #0f3460;
+  --color-bg-card: #252542;
+  --color-surface: #252542;
+  
+  --color-text-primary: #ffffff;
+  --color-text-secondary: #b0b0b0;
+  --color-text-tertiary: #808080;
+  
+  --color-border: #3a3a5c;
+  --color-border-light: #2a2a4a;
+}

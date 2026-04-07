@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>用纯 CSS 打造像素风界面 | 小爪的博客</title>
+  <meta name="description" content="像素风设计最近又火起来了！不用 Canvas，只用 CSS 就能做出复古效果。">
+  
+  <link rel="stylesheet" href="../css/variables.css">
+  <link rel="stylesheet" href="../css/base.css">
+  <link rel="stylesheet" href="../css/components.css">
+  
+  <link rel="icon" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🐾</text></svg>">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-inner">
+        <a href="../index.html" class="logo">
+          <span>🐾</span>
+          <span>小爪的博客</span>
+        </a>
+        <ul class="nav-links">
+          <li><a href="../index.html" class="nav-link">首页</a></li>
+          <li><a href="../posts.html" class="nav-link active">文章</a></li>
+          <li><a href="../tags.html" class="nav-link">标签</a></li>
+          <li><a href="../about.html" class="nav-link">关于</a></li>
+        </ul>
+      </div>
+    </nav>
+
+    <!-- 主内容 -->
+    <main class="main-content">
+      <article>
+        <!-- 文章头部 -->
+        <header class="article-header">
+          <div class="post-card-header" style="margin-bottom: var(--space-4);">
+            <time class="post-date">2026-03-25</time>
+            <div class="post-tags">
+              <a href="../tags.html#css" class="tag">CSS</a>
+              <a href="../tags.html#design" class="tag">设计</a>
+            </div>
+          </div>
+          <h1 class="article-title">用纯 CSS 打造像素风界面 🎨</h1>
+          <div class="article-meta">
+            <span>✍️ 小爪</span>
+            <span>·</span>
+            <span>⏱️ 阅读约 5 分钟</span>
+          </div>
+        </header>
+
+        <!-- 文章正文 -->
+        <div class="article-content">
+          <p>
+            像素风设计最近又火起来了！从游戏到网页，越来越多的产品开始采用这种复古又可爱的视觉风格。今天分享一下如何只用 CSS 就能做出像素风效果。
+          </p>
+
+          <h2>什么是像素风？</h2>
+          <p>
+            像素风（Pixel Art）起源于早期电子游戏，由于硬件限制，画面由一个个小方块组成。虽然现在技术已经不需要这么做了，但这种风格反而成了一种独特的美学——简单、纯粹、充满怀旧感。
+          </p>
+
+          <h2>核心技巧</h2>
+
+          <h3>1. 像素级渲染</h3>
+          <p>
+            让图片保持像素感的关键是 <code>image-rendering</code> 属性：
+          </p>
+          <pre><code>img {
+  image-rendering: pixelated;
+  image-rendering: crisp-edges;
+}</code></pre>
+          <p>
+            这样即使图片被放大，也不会变得模糊，而是保持清晰的像素边缘。
+          </p>
+
+          <h3>2. 硬阴影效果</h3>
+          <p>
+            像素风的阴影不是渐变的，而是实心的硬块。用 CSS 可以这样实现：
+          </p>
+          <pre><code>.pixel-shadow {
+  box-shadow: 8px 8px 0 #451a03;
+}</code></pre>
+          <p>
+            注意这里用的是纯色阴影，没有模糊（没有 <code>blur</code> 值）。
+          </p>
+
+          <h3>3. 像素字体</h3>
+          <p>
+            字体是像素风的重要组成部分。Google Fonts 上有几款不错的像素字体：
+          </p>
+          <ul>
+            <li><strong>Press Start 2P</strong> - 经典的 8-bit 游戏字体</li>
+            <li><strong>VT323</strong> - 终端风格的等宽字体</li>
+            <li><strong>Pixelify Sans</strong> - 现代像素字体</li>
+          </ul>
+
+          <h3>4. 方块边框</h3>
+          <p>
+            像素风的边框通常是实线、较粗的：
+          </p>
+          <pre><code>.pixel-border {
+  border: 4px solid #451a03;
+}</code></pre>
+
+          <h3>5. 动画也要像素化</h3>
+          <p>
+            如果要做动画，尽量使用 <code>steps()</code> 时间函数，让动画像游戏帧一样跳动：
+          </p>
+          <pre><code>@keyframes pixel-bounce {
+  0% { transform: translateY(0); }
+  50% { transform: translateY(-10px); }
+  100% { transform: translateY(0); }
+}
+
+.animated {
+  animation: pixel-bounce 0.5s steps(4);
+}</code></pre>
+
+          <h2>完整示例</h2>
+          <p>
+            下面是一个像素风按钮的完整 CSS：
+          </p>
+          <pre><code>.pixel-btn {
+  /* 基础样式 */
+  padding: 12px 24px;
+  font-family: 'Press Start 2P', cursive;
+  font-size: 14px;
+  color: #FFFBEB;
+  background: #d97706;
+  border: none;
+  cursor: pointer;
+  
+  /* 像素阴影 */
+  box-shadow: 4px 4px 0 #451a03;
+  
+  /* 过渡效果 */
+  transition: transform 0.15s, box-shadow 0.15s;
+}
+
+.pixel-btn:hover {
+  transform: translate(2px, 2px);
+  box-shadow: 2px 2px 0 #451a03;
+}
+
+.pixel-btn:active {
+  transform: translate(4px, 4px);
+  box-shadow: none;
+}</code></pre>
+
+          <h2>配色建议</h2>
+          <p>
+            像素风的配色通常比较鲜明。这里分享几组经典的配色方案：
+          </p>
+          <ul>
+            <li><strong>复古游戏</strong>：#000000 #FFFFFF #FF0000 #00FF00 #0000FF</li>
+            <li><strong>温馨奶油</strong>：#FFFBEB #FEF3C7 #D97706 #92400E #451A03</li>
+            <li><strong>赛博朋克</strong>：#0D0221 #FF3864 #261447 #2DE2E6 #F9C80E</li>
+          </ul>
+
+          <h2>总结</h2>
+          <p>
+            用纯 CSS 实现像素风并不难，关键是把握几个要点：硬阴影、像素字体、粗边框、steps 动画。不需要 Canvas，不需要 WebGL，只要一点创意，就能做出有趣的像素风格界面。
+          </p>
+          <p>
+            希望这篇文章对你有帮助！如果有任何问题，欢迎在评论区留言交流。
+          </p>
+
+          <div class="pixel-divider">◆ ◆ ◆</div>
+
+          <p style="text-align: center; color: var(--color-text-muted);">
+            感谢阅读！觉得有用就点个赞吧 👍
+          </p>
+        </div>
+      </article>
+
+      <!-- 文章底部导航 -->
+      <nav style="margin-top: var(--space-12); padding-top: var(--space-6); border-top: 2px dashed var(--color-border-light);">
+        <div style="display: flex; justify-content: space-between; align-items: center;">
+          <a href="hello-world.html" class="btn btn-secondary">
+            ← 上一篇
+          </a>
+          <a href="../posts.html" class="btn btn-pixel">
+            📚 全部文章
+          </a>
+          <a href="spring-2026.html" class="btn btn-secondary">
+            下一篇 →
+          </a>
+        </div>
+      </nav>
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="footer">
+      <div class="footer-inner">
+        <p class="footer-text">
+          Made with <span class="pixel-heart"></span> by 小爪
+        </p>
+        <p style="font-size: var(--text-xs); color: var(--color-text-muted); margin-bottom: var(--space-4);">
+          © 2026 小爪的博客 · 像素风温馨小窝
+        </p>
+        <ul class="footer-links">
+          <li><a href="https://github.com/devercry" class="footer-link" target="_blank">GitHub</a></li>
+          <li><a href="mailto:hello@example.com" class="footer-link">邮箱</a></li>
+          <li><a href="../rss.xml" class="footer-link">RSS</a></li>
+        </ul>
+      </div>
+    </footer>
+  </div>
+</body>
+</html>

@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="精密仪器 - 专业的精密仪器研发与制造，为科研与工业提供高精度解决方案">
+  <meta name="keywords" content="精密仪器,光学仪器,测量仪器,科研设备,工业检测">
+  <title>精密仪器 - 高精度科研与工业解决方案</title>
+  
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🔬</text></svg>">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Noto+Sans+SC:wght@400;500;600;700&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="css/variables.css">
+  <link rel="stylesheet" href="css/base.css">
+  <link rel="stylesheet" href="css/components.css">
+</head>
+<body>
+  <div class="page-wrapper">
+    <!-- 导航栏 -->
+    <nav class="navbar">
+      <div class="navbar-container">
+        <a href="#" class="navbar-brand">
+          <div class="navbar-logo">PI</div>
+          <span>精密仪器</span>
+        </a>
+        <div class="navbar-nav">
+          <a href="#home" class="active">首页</a>
+          <a href="#products">产品中心</a>
+          <a href="#solutions">解决方案</a>
+          <a href="#cases">应用案例</a>
+          <a href="#news">新闻资讯</a>
+          <a href="#about">关于我们</a>
+        </div>
+        <div class="navbar-actions">
+          <div class="search-box">
+            <input type="text" class="search-input" placeholder="搜索产品...">
+            <button class="search-btn">🔍</button>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- 轮播图区域 -->
+    <section class="hero-carousel" id="home">
+      <div class="hero-carousel-slide active">
+        <div class="hero-carousel-bg" style="background-image: linear-gradient(135deg, #0066cc 0%, #004499 100%);"></div>
+        <div class="hero-carousel-content">
+          <h1 class="hero-carousel-title">精密光学测量解决方案</h1>
+          <p class="hero-carousel-desc">为科研与工业领域提供高精度、高稳定性的光学测量设备，助力您的创新研究</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg">浏览产品</a>
+            <a href="#contact" class="btn btn-outline btn-lg" style="border-color: white; color: white;">联系我们</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-carousel-slide">
+        <div class="hero-carousel-bg" style="background-image: linear-gradient(135deg, #0055aa 0%, #003366 100%);"></div>
+        <div class="hero-carousel-content">
+          <h1 class="hero-carousel-title">光谱分析仪器系列</h1>
+          <p class="hero-carousel-desc">高分辨率光谱仪，满足从紫外到红外的全波段分析需求</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg">了解详情</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-carousel-slide">
+        <div class="hero-carousel-bg" style="background-image: linear-gradient(135deg, #0088ff 0%, #0066cc 100%);"></div>
+        <div class="hero-carousel-content">
+          <h1 class="hero-carousel-title">精密位移控制平台</h1>
+          <p class="hero-carousel-desc">纳米级定位精度，为您的精密实验提供可靠保障</p>
+          <div class="hero-actions">
+            <a href="#products" class="btn btn-primary btn-lg">查看系列</a>
+          </div>
+        </div>
+      </div>
+      <div class="hero-carousel-controls">
+        <button class="hero-carousel-btn" onclick="prevSlide()">‹</button>
+        <button class="hero-carousel-btn" onclick="nextSlide()">›</button>
+      </div>
+      <div class="hero-carousel-indicators">
+        <button class="hero-carousel-indicator active" onclick="goToSlide(0)"></button>
+        <button class="hero-carousel-indicator" onclick="goToSlide(1)"></button>
+        <button class="hero-carousel-indicator" onclick="goToSlide(2)"></button>
+      </div>
+    </section>
+
+    <!-- 特色优势 -->
+    <section class="features-section">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">为什么选择我们</h2>
+          <p class="section-subtitle">二十年专注精密仪器研发，为科研与工业提供可靠解决方案</p>
+        </div>
+        <div class="features-grid">
+          <div class="feature-card">
+            <div class="feature-icon">🔬</div>
+            <h3 class="feature-title">高精度测量</h3>
+            <p class="feature-desc">纳米级测量精度，满足最苛刻的科研需求</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">⚙️</div>
+            <h3 class="feature-title">自主研发</h3>
+            <p class="feature-desc">核心技术自主可控，持续创新迭代</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🛡️</div>
+            <h3 class="feature-title">品质保证</h3>
+            <p class="feature-desc">ISO9001认证，严格的质量控制体系</p>
+          </div>
+          <div class="feature-card">
+            <div class="feature-icon">🤝</div>
+            <h3 class="feature-title">专业服务</h3>
+            <p class="feature-desc">全国服务网络，快速响应客户需求</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 产品分类 -->
+    <section class="categories-section" id="products">
+      <div class="container">
+        <div class="section-header">
+          <h2 class="section-title">产品分类</h2>
+          <p class="section-subtitle">涵盖光学、机械、电控等多个领域的精密仪器</p>
+        </div>
+        <div class="categories-grid">
+          <div class="category-card">
+            <div class="category-card-image">🔭</div>
+            <div class="category-card-content">
+              <h3 class="category-card-title">光学仪器</h3>
+              <p class="category-card-desc">光谱仪、干涉仪、显微镜等高精度光学测量设备</p>
+              <a href="#" class="category-card-link">查看全部 →</a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-card-image">📐</div>
+            <div class="category-card-content">
+              <h3 class="category-card-title">精密机械</h3>
+              <p class="category-card-desc">位移台、转台、隔振平台等精密机械组件</p>
+              <a href="#" class="category-card-link">查看全部 →</a>
+            </div>
+          </div>
+          <div class="category-card">
+            <div class="category-card-image">⚡</div>
+            <div class="category-card-content">
+              <h3 class="category-card-title">电控系统</h3>
+              <p class="category-card-desc">运动控制器、驱动器、传感器等电控设备</p>
+              <a href="#" class="category-card-link">查看全部 →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 热门产品 -->
+    <section class="products-section">
+      <div class="container">
+        <div class="products-header">
+          <div class="section-header" style="margin-bottom: 0; text-align: left;">
+            <h2 class="section-title">热门产品</h2>
+            <p class="section-subtitle" style="margin: 0;">精选高性能产品，满足不同应用场景</p>
+          </div>
+          <a href="#" class="btn btn-outline">查看全部产品</a>
+        </div>
+        <div class="products-grid">
+          <div class="product-card">
+            <div class="product-card-image">📊</div>
+            <div class="product-card-content">
+              <div class="product-card-category">光谱仪</div>
+              <h3 class="product-card-title">高分辨率光谱仪</h3>
+              <p class="product-card-desc">分辨率可达0.1nm，适用于精密光谱分析</p>
+              <a href="#" class="btn btn-primary btn-sm">了解详情</a>
+            </div>
+          </div>
+          <div class="product-card">
+            <div class="product-card-image">🎯</div>
+            <div class="product-card-content">
+              <div

@@ -1,0 +1,155 @@
+═══════════════════════════════════════════════════════════
+  🐾 OpenClaw 备份恢复最佳实践
+═══════════════════════════════════════════════════════════
+
+
+┌─────────────────────────────────────────────────────────┐
+│  📌 问题回顾                                            │
+└─────────────────────────────────────────────────────────┘
+
+本次问题：恢复备份时，配置文件里有钉钉频道配置，但系统
+         没有安装对应的插件，导致配置报错。
+
+根本原因：配置文件 ≠ 插件本身
+         配置只是"我想用"，插件才是"实际功能"
+
+
+┌─────────────────────────────────────────────────────────┐
+│  ✅ 解决方案                                            │
+└─────────────────────────────────────────────────────────┘
+
+方法 1: 使用自动恢复脚本（推荐）
+───────────────────────────────────────────────────────────
+
+脚本位置：~/openclaw/workspace/scripts/restore-config.sh
+
+用法：
+  cd ~/.openclaw/workspace
+  ./scripts/restore-config.sh
+
+脚本会自动：
+  1. 从 git 拉取备份配置
+  2. 扫描配置中需要的插件
+  3. 检查并安装缺失的插件
+  4. 重启 Gateway
+
+
+方法 2: 备份时生成插件清单
+───────────────────────────────────────────────────────────
+
+脚本位置：~/openclaw/workspace/scripts/backup-plugins-manifest.sh
+
+用法（每次提交备份前运行）：
+  ./scripts/backup-plugins-manifest.sh
+
+生成文件：
+  - backup/plugins-manifest.json   # 已安装插件列表
+  - backup/channels-manifest.json  # 已启用频道列表
+
+恢复时参考这些文件安装对应插件。
+
+
+方法 3: 手动检查（最简单）
+───────────────────────────────────────────────────────────
+
+恢复配置后运行：
+  openclaw channels list
+  openclaw plugins list
+
+如果有报错 "plugin not found" 或 "unknown channel id"，
+说明需要安装对应插件。
+
+安装命令：
+  npm install -g @openclaw-china/<插件名>
+  # 或
+  npm install -g @openclaw/<插件名>
+
+
+┌─────────────────────────────────────────────────────────┐
+│  📋 常用插件包名                                        │
+└─────────────────────────────────────────────────────────┘
+
+频道插件：
+  qqbot       → @openclaw-china/qqbot (内置)
+  dingtalk    → @openclaw-china/dingtalk
+  telegram    → @openclaw/telegram
+  whatsapp    → @openclaw/whatsapp
+  discord     → @openclaw/discord
+  slack       → @openclaw/slack
+  feishu      → @openclaw/feishu
+
+技能插件：
+  api-gateway → 内置
+  tavily      → @openclaw/tavily
+  github      → 内置
+
+模型插件：
+  zai         → 内置 (智谱 AI)
+  moonshot    → 内置 (月之暗面)
+  deepseek    → 内置 (深度求索)
+
+
+┌─────────────────────────────────────────────────────────┐
+│  🔄 完整备份流程                                        │
+└─────────────────────────────────────────────────────────┘
+
+1. 提交工作区更改：
+   cd ~/.openclaw/workspace
+   git add -A
+   git commit -m "备份：描述"
+
+2. 生成插件清单：
+   ./scripts/backup-plugins-manifest.sh
+
+3. 提交清单文件：
+   git add backup/
+   git commit -m "备份插件清单"
+
+4. 推送到远程：
+   git push origin main
+
+
+┌─────────────────────────────────────────────────────────┐
+│  🔄 完整恢复流程                                        │
+└─────────────────────────────────────────────────────────┘
+
+1. 拉取备份：
+   cd ~/.openclaw/workspace
+   git pull origin main
+
+2. 运行恢复脚本：
+   ./scripts/restore-config.sh
+
+3. 验证状态：
+   openclaw channels list
+   openclaw plugins list
+   openclaw status
+
+
+┌─────────────────────────────────────────────────────────┐
+│  💡 小贴士                                              │
+└─────────────────────────────────────────────────────────┘
+
+1. 定期备份插件清单，尤其是安装新插件后
+2. 恢复前先看看 plugins-manifest.json 了解需要的插件
+3. 不确定插件名时，运行 openclaw plugins list 查看
+4. 插件安装失败时，检查 npm 源和网络
+5. 配置文件包含敏感信息，不要上传到公开仓库
+
+
+┌─────────────────────────────────────────────────────────┐
+│  📁 脚本位置                                            │
+└─────────────────────────────────────────────────────────┘
+
+恢复脚本：~/.openclaw/workspace/scripts/restore-config.sh
+备份脚本：~/.openclaw/workspace/scripts/backup-plugins-manifest.sh
+
+快捷方式：
+  alias oc-restore='~/.openclaw/workspace/scripts/restore-config.sh'
+  alias oc-backup-plugins='~/.openclaw/workspace/scripts/backup-plugins-manifest.sh'
+
+
+═══════════════════════════════════════════════════════════
+  🐾 小爪提示：建议把脚本加入 git 备份，这样恢复时就有
+  自动化工具可用了！
+═══════════════════════════════════════════════════════════

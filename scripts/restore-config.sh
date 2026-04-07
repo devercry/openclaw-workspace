@@ -1,33 +1,39 @@
 #!/bin/bash
 # 🐾 OpenClaw 配置恢复脚本
-# 用法：./restore-config.sh [备份提交 hash]
+# 用法：
+#   手动运行：./scripts/restore-config.sh
+#   自动运行：git pull 后会自动检测并提示
 # 
-# ⚠️ 重要：从仓库拉取备份后，务必运行此脚本！
-#        否则可能漏掉插件安装
+# 自动检测配置变更，自动安装缺失的插件
 
 set -e
 
 WORKSPACE=~/.openclaw/workspace
 OPENCLAW_DIR=~/.openclaw
 EXTENSIONS_DIR=~/.openclaw/extensions
+CONFIG_FILE=~/.openclaw/openclaw.json
 
 echo "═══════════════════════════════════════════════════════════"
 echo "  🐾 OpenClaw 配置恢复脚本"
 echo "═══════════════════════════════════════════════════════════"
 echo ""
-echo "⚠️  重要提示："
-echo "   从仓库拉取备份后，务必运行此脚本！"
-echo "   否则可能漏掉插件安装，导致配置报错"
-echo ""
 
-# 1. 从 git 恢复配置文件
-echo "📦 步骤 1: 恢复配置文件..."
+# 1. 从 git 恢复配置文件（如果有远程）
+echo "📦 步骤 1: 检查配置更新..."
 cd $WORKSPACE
 
-# 检查是否有远程更新
+# 检查是否有远程更新（如果用户刚 pull 过，这里会跳过）
 if git remote | grep -q origin; then
-    echo "   从 origin 拉取更新..."
-    git pull origin main --allow-unrelated-histories --no-rebase || true
+    # 检查是否需要 pull（通过比较本地和远程 HEAD）
+    LOCAL=$(git rev-parse HEAD 2>/dev/null)
+    REMOTE=$(git rev-parse @{u} 2>/dev/null || echo "")
+    
+    if [ -n "$REMOTE" ] && [ "$LOCAL" != "$REMOTE" ]; then
+        echo "   检测到远程更新，正在拉取..."
+        git pull origin main --allow-unrelated-histories --no-rebase || true
+    else
+        echo "   配置已是最新"
+    fi
 else
     echo "   ⚠️  未配置 origin 远程，跳过拉取"
 fi

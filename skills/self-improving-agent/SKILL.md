@@ -25,6 +25,130 @@ Log learnings and errors to markdown files for continuous improvement. Coding ag
 | Tool gotchas | Promote to `TOOLS.md` (OpenClaw workspace) |
 | Behavioral patterns | Promote to `SOUL.md` (OpenClaw workspace) |
 
+## 🤝 与 AutoSkill4OpenClaw 协同（已启用）
+
+当 AutoSkill4OpenClaw 插件启用时，遵循以下分工原则：
+
+### 分工规则
+
+| 系统 | 负责范围 | 特点 |
+|------|----------|------|
+| **self-improvement** | 临时记录、错误日志、功能请求 | 快速、人工、未验证 |
+| **AutoSkill** | 长期技能、版本管理、自动检索 | 自动、标准化、已验证 |
+
+### 记录范围调整
+
+#### ✅ 继续记录到 .learnings/
+
+1. **ERRORS.md** - 所有错误日志（完整保留）
+   - 命令执行失败
+   - API 调用错误
+   - 工具异常
+
+2. **FEATURE_REQUESTS.md** - 所有功能请求（完整保留）
+   - 用户新需求
+   - 改进建议
+   - 期望功能
+
+3. **LEARNINGS.md** - 仅记录**未验证**的经验
+   - 第一次遇到的纠正
+   - 单次用户偏好
+   - 临时性经验
+   - ⚠️ 标注 `[tentative]` 标签
+
+#### ❌ 不再手动创建技能
+
+- 不再生成 SKILL.md 文件
+- 重复 3 次以上的偏好 → 交给 AutoSkill 提取
+- AutoSkill 提取后 → 删除 .learnings/对应记录
+
+### 技能生成规则
+
+```
+新经验 → self-improvement 记录（.learnings/LEARNINGS.md）
+           ↓
+    使用/纠正 3 次以上
+           ↓
+    AutoSkill 识别为稳定模式
+           ↓
+    生成 SKILL.md (v0.1.0) → SkillBank/
+           ↓
+    镜像到 workspace/skills/
+           ↓
+    删除 .learnings/对应记录
+```
+
+### 每日复盘调整（中午 12:00）
+
+**新增审查步骤：**
+
+1. ✅ 查看 .learnings/ 新记录
+2. ✅ 查看 SkillBank 新技能（`~/.openclaw/autoskill/SkillBank/`）
+3. ✅ 发现有对应关系 → 删除 .learnings/记录
+4. ✅ 审查技能质量 → 手动优化 SKILL.md
+
+**检查命令：**
+```bash
+# 查找可能的重复
+grep -r "关键词" ~/.openclaw/workspace/.learnings/
+grep -r "关键词" ~/.openclaw/autoskill/SkillBank/
+
+# 查看新提取的技能
+find ~/.openclaw/autoskill/SkillBank -name "SKILL.md" -mtime -1
+
+# 查看镜像的技能
+find ~/.openclaw/workspace/skills -name "SKILL.md" -mtime -1
+```
+
+### 避免重复记录
+
+**判断流程：**
+```
+用户表达偏好
+    ↓
+第一次 → 记录到 .learnings/LEARNINGS.md [tentative]
+    ↓
+第二次 → 更新原记录，增加计数
+    ↓
+第三次 → 标记"待 AutoSkill 提取"
+    ↓
+AutoSkill 提取后 → 删除此记录
+```
+
+**记录模板（带状态）：**
+```markdown
+### [correction] [tentative] 使用 trash 而非 rm
+**时间：** 2026-04-07 13:30
+**计数：** 1/3
+**状态：** ⏳ 待验证
+**场景：** 删除文件操作
+**内容：** 用户偏好使用 trash（可恢复）
+**应用：** 所有删除文件场景优先用 trash
+**AutoSkill 提取后删除此条**
+```
+
+### 冲突处理
+
+**发现重复时：**
+
+1. **保留** SkillBank 版本（更规范，有版本管理）
+2. **删除** .learnings/对应记录
+3. **记录** 到协同日志（见下方）
+
+**协同日志：**
+```bash
+# 位置：~/.openclaw/workspace/.learnings/COORDINATION.md
+cat >> ~/.openclaw/workspace/.learnings/COORDINATION.md << 'EOF'
+## 2026-04-07
+
+### 已合并到 AutoSkill
+- prefer_trash_over_rm → SkillBank/prefer_trash_over_rm/SKILL.md (v0.1.0)
+- deleted: .learnings/LEARNINGS.md#use-trash-not-rm
+EOF
+```
+
+---
+
 ## OpenClaw Setup (Recommended)
 
 OpenClaw is the primary platform for this skill. It uses workspace-based prompt injection with automatic skill loading.

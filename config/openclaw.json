@@ -1,0 +1,59 @@
+{
+  "meta": {
+    "lastTouchedVersion": "2026.3.13",
+    "lastTouchedAt": "2026-03-23T01:06:11.315Z"
+  },
+  "wizard": {
+    "lastRunAt": "2026-03-23T01:06:11.309Z",
+    "lastRunVersion": "2026.3.13",
+    "lastRunCommand": "configure",
+    "lastRunMode": "local"
+  },
+  "auth": {
+    "profiles": {
+      "zai:default": {
+        "provider": "zai",
+        "mode": "api_key"
+      }
+    }
+  },
+  "models": {
+    "mode": "merge",
+    "providers": {
+      "tenbox": {
+        "baseUrl": "http://10.0.2.3/v1",
+        "apiKey": "YOUR_API_KEY_HERE",
+        "api": "openai-completions",
+        "models": [{ "id": "default", "name": "Default (TenBox Proxy)" }]
+      },
+      "zai": {
+        "baseUrl": "https://open.bigmodel.cn/api/coding/paas/v4",
+        "api": "openai-completions",
+        "models": [
+          { "id": "glm-5", "name": "GLM-5", "reasoning": true, "input": ["text"], "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }, "contextWindow": 204800, "maxTokens": 131072 }
+        ]
+      },
+      "custom-coding-dashscope-aliyuncs-com": {
+        "baseUrl": "https://coding.dashscope.aliyuncs.com/v1",
+        "apiKey": "YOUR_DASHSCOPE_API_KEY_HERE",
+        "api": "openai-completions",
+        "models": [
+          { "id": "kimi-k2.5", "name": "kimi-k2.5 (Custom Provider)", "reasoning": false, "input": ["text"], "cost": { "input": 0, "output": 0, "cacheRead": 0, "cacheWrite": 0 }, "contextWindow": 16000, "maxTokens": 4096 }
+        ]
+      }
+    }
+  },
+  "agents": {
+    "defaults": {
+      "model": { "primary": "custom-coding-dashscope-aliyuncs-com/kimi-k2.5" },
+      "models": {
+        "zai/glm-5": { "alias": "GLM" },
+        "custom-coding-dashscope-aliyuncs-com/kimi-k2.5": { "alias": "kimi-k2.5" }
+      }
+    }
+  },
+  "tools": { "profile": "full" },
+  "commands": { "native": "auto", "nativeSkills": "auto", "restart": true, "ownerDisplay": "raw" },
+  "env": { "vars": { "TAVILY_API_KEY": "YOUR_TAVILY_API_KEY_HERE", "MATON_API_KEY": "YOUR_MATON_API_KEY_HERE" } },
+  "gateway": { "mode": "local", "bind": "lan", "controlUi": { "allowedOrigins": ["*"], "allowInsecureAuth": true, "dangerouslyDisableDeviceAuth": true }, "auth": { "mode": "token", "token": "YOUR_GATEWAY_TOKEN_HERE" } }
+}

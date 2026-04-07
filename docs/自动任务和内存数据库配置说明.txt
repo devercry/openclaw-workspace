@@ -1,0 +1,147 @@
+═══════════════════════════════════════════════════════════
+  🐾 自动任务和内存数据库配置说明
+═══════════════════════════════════════════════════════════
+
+配置时间：2026-04-07 10:43
+
+
+┌─────────────────────────────────────────────────────────┐
+│  ✅ 已完成配置                                          │
+└─────────────────────────────────────────────────────────┘
+
+1. Cron 定时任务
+   ────────────────────────────────────────────────────────
+   文件：~/.openclaw/cron/jobs.json
+   
+   已配置任务：
+   ✅ daily-git-backup-9am
+      时间：每天 9:00 AM
+      任务：自动 git 备份到 GitHub
+   
+   ✅ daily-git-backup-4pm
+      时间：每天 4:00 PM
+      任务：自动 git 备份到 GitHub
+
+2. 内存数据库文件
+   ────────────────────────────────────────────────────────
+   已恢复文件：
+   ✅ ~/.openclaw/graph-memory.db
+   ✅ ~/.openclaw/graph-memory.db-shm
+   ✅ ~/.openclaw/graph-memory.db-wal
+
+3. openclaw.json 配置
+   ────────────────────────────────────────────────────────
+   ✅ agents.defaults.memorySearch.enabled = true
+   ✅ agents.defaults.memorySearch.provider = "openai"
+   ✅ agents.defaults.compaction.mode = "safeguard"
+
+
+┌─────────────────────────────────────────────────────────┐
+│  ⚠️  需要配置：Embedding Provider API Key              │
+└─────────────────────────────────────────────────────────┘
+
+内存搜索需要 embedding provider 才能工作。
+
+选择以下任一方案：
+
+方案 1: OpenAI（推荐）
+───────────────────────────────────────────────────────────
+  export OPENAI_API_KEY="你的 key"
+  
+  添加到 ~/.bashrc：
+  echo 'export OPENAI_API_KEY="sk-xxx"' >> ~/.bashrc
+  source ~/.bashrc
+
+方案 2: Google Gemini
+───────────────────────────────────────────────────────────
+  export GEMINI_API_KEY="你的 key"
+  
+  然后修改 ~/.openclaw/openclaw.json：
+  "memorySearch": {
+    "enabled": true,
+    "provider": "google"
+  }
+
+方案 3: Voyage AI
+───────────────────────────────────────────────────────────
+  export VOYAGE_API_KEY="你的 key"
+  
+  然后修改 ~/.openclaw/openclaw.json：
+  "memorySearch": {
+    "enabled": true,
+    "provider": "voyage"
+  }
+
+方案 4: 本地模型（无需 API Key，但需要下载模型）
+───────────────────────────────────────────────────────────
+  配置本地 embedding 模型路径
+
+
+┌─────────────────────────────────────────────────────────┐
+│  📋 验证步骤                                            │
+└─────────────────────────────────────────────────────────┘
+
+配置 API Key 后：
+
+1. 重启 Gateway
+   openclaw gateway restart
+
+2. 验证 cron 任务
+   openclaw cron list
+   
+   应该显示：
+   - daily-git-backup-9am (每天 9:00)
+   - daily-git-backup-4pm (每天 16:00)
+
+3. 验证内存搜索
+   openclaw memory status --deep
+   
+   应该显示：
+   - vector: ready
+   - fts: ready
+
+
+┌─────────────────────────────────────────────────────────┐
+│  🎯 当前状态                                            │
+└─────────────────────────────────────────────────────────┘
+
+项目                状态
+────────────────────────────────────────────────
+Cron 配置文件        ✅ 已创建
+Cron 任务            ⏳ 等待 Gateway 加载
+内存数据库文件      ✅ 已恢复
+内存搜索功能        ⏳ 等待 API Key 配置
+
+
+┌─────────────────────────────────────────────────────────┐
+│  💡 下一步操作                                          │
+└─────────────────────────────────────────────────────────┘
+
+1. 获取 OpenAI API Key（或其他 provider）
+   https://platform.openai.com/api-keys
+
+2. 配置环境变量
+   export OPENAI_API_KEY="sk-..."
+
+3. 重启 Gateway
+   openclaw gateway restart
+
+4. 验证配置
+   openclaw cron list
+   openclaw memory status
+
+
+┌─────────────────────────────────────────────────────────┐
+│  📝 备注                                                │
+└─────────────────────────────────────────────────────────┘
+
+1. Cron 任务会在指定时间自动触发，无需手动干预
+2. 内存搜索需要 API Key 才能启用语义搜索功能
+3. 如果不想用 API，可以禁用 memorySearch：
+   "memorySearch": { "enabled": false }
+4. 文件式记忆（MEMORY.md）仍然可用，不受影响
+
+
+═══════════════════════════════════════════════════════════
+  🐾 小爪提示：配置 API Key 后重启 Gateway 就完成啦！
+═══════════════════════════════════════════════════════════

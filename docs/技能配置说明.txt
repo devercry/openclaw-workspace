@@ -1,0 +1,142 @@
+═══════════════════════════════════════════════════════════
+  🐾 OpenClaw 技能配置指南 - 需要配置的 API Keys
+═══════════════════════════════════════════════════════════
+
+恢复的技能中，以下技能需要配置 API Keys 才能使用：
+
+┌─────────────────────────────────────────────────────────┐
+│  1️⃣  API Gateway (api-gateway) - ⭐ 重要               │
+└─────────────────────────────────────────────────────────┘
+
+用途：连接 100+ 外部 API（Google Workspace、GitHub、Notion、
+      Slack、Airtable、HubSpot、Salesforce 等）
+
+需要配置：MATON_API_KEY
+
+获取步骤：
+  1. 访问 https://maton.ai
+  2. 注册/登录账号
+  3. 进入 https://maton.ai/settings
+  4. 复制 API Key
+
+配置方法：
+  方法 A - 环境变量（推荐）：
+    echo 'export MATON_API_KEY="你的 key"' >> ~/.bashrc
+    source ~/.bashrc
+
+  方法 B - 写入 OpenClaw 配置：
+    编辑 ~/.openclaw/openclaw.json
+    在 tools.env 中添加：
+    {
+      "env": {
+        "MATON_API_KEY": "你的 key"
+      }
+    }
+
+支持的服务（部分）：
+  - Google Workspace (Gmail, Calendar, Drive, Sheets, Docs...)
+  - Microsoft 365 (Outlook, OneDrive, Excel...)
+  - GitHub
+  - Notion
+  - Slack
+  - Airtable
+  - HubSpot
+  - Salesforce
+  - Trello
+  - Zoom
+  - 等等 100+ 服务
+
+
+┌─────────────────────────────────────────────────────────┐
+│  2️⃣  Tavily Search (tavily-search)                     │
+└─────────────────────────────────────────────────────────┘
+
+用途：增强版网络搜索
+
+需要配置：TAVILY_API_KEY
+
+获取步骤：
+  1. 访问 https://tavily.com
+  2. 注册账号
+  3. 获取 API Key
+
+配置方法：
+  export TAVILY_API_KEY="你的 key"
+
+
+┌─────────────────────────────────────────────────────────┐
+│  3️⃣  GitHub 技能 (github)                              │
+└─────────────────────────────────────────────────────────┘
+
+用途：GitHub 仓库管理、Issue、PR 等
+
+需要配置：GITHUB_TOKEN
+
+获取步骤：
+  1. 访问 https://github.com/settings/tokens
+  2. 生成新 token（建议 scope: repo, user）
+  3. 复制 token
+
+配置方法：
+  export GITHUB_TOKEN="你的 token"
+
+
+┌─────────────────────────────────────────────────────────┐
+│  4️⃣  ElevenLabs TTS (如果有 sag 技能)                  │
+└─────────────────────────────────────────────────────────┘
+
+用途：语音合成
+
+需要配置：ELEVENLABS_API_KEY
+
+获取步骤：
+  1. 访问 https://elevenlabs.io
+  2. 注册账号
+  3. 获取 API Key
+
+配置方法：
+  export ELEVENLABS_API_KEY="你的 key"
+
+
+═══════════════════════════════════════════════════════════
+  📌 快速配置脚本
+═══════════════════════════════════════════════════════════
+
+将以下内容添加到 ~/.bashrc：
+
+# OpenClaw 技能 API Keys
+export MATON_API_KEY="你的 Maton API Key"
+export TAVILY_API_KEY="你的 Tavily API Key"  # 可选
+export GITHUB_TOKEN="你的 GitHub Token"      # 可选
+export ELEVENLABS_API_KEY="你的 ElevenLabs Key"  # 可选
+
+然后执行：
+  source ~/.bashrc
+
+
+═══════════════════════════════════════════════════════════
+  🔍 验证配置
+═══════════════════════════════════════════════════════════
+
+配置后验证：
+  echo $MATON_API_KEY
+  echo $TAVILY_API_KEY
+  echo $GITHUB_TOKEN
+
+如果显示 key 值说明配置成功。
+
+
+═══════════════════════════════════════════════════════════
+  💡 提示
+═══════════════════════════════════════════════════════════
+
+1. API Gateway 是最常用的技能，建议优先配置
+2. 其他技能按需配置
+3. Key 请妥善保管，不要上传到公开仓库
+4. 配置文件位置：~/.openclaw/openclaw.json
+5. 工作区位置：~/.openclaw/workspace
+
+═══════════════════════════════════════════════════════════
+  🐾 小爪提示：配置完成后重启 Gateway 生效
+  命令：openclaw gateway restart
+═══════════════════════════════════════════════════════════

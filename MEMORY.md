@@ -1,6 +1,6 @@
 # 🧠 MEMORY.md - 核心记忆库
 
-**最后更新：** 2026-04-08 12:00  
+**最后更新：** 2026-04-09 12:00  
 **维护方式：** 每日 12:00 自动反思，提炼 daily notes 中的关键信息
 
 ---
@@ -41,6 +41,12 @@
    - 已集成 self-improvement 技能（自动记录错误和经验）
    - humanizer-zh 技能（去除 AI 写作痕迹）
    - AutoSkill4OpenClaw 协同方案
+   - tech-news-digest 技能（v3.15.0，六源数据收集自动化）
+
+4. **自动化工具**
+   - 每日新闻摘要：`scripts/daily-news.sh`、`scripts/daily-news-full.sh`
+   - 6DoF PPT 生成器：`scripts/generate-6dof-ppt*.py`（simple/tech 三个版本）
+   - 每日自我反思：cron:daily-self-reflection-12pm（12:00 自动执行）
 
 ### 关键配置决策
 - **备份策略：** 使用 git 定期备份 workspace
@@ -84,6 +90,7 @@
 
 | 版本 | 日期 | 变更摘要 |
 |------|------|----------|
+| 1.1 | 2026-04-09 | 新增 tech-news-digest 系统、6DoF PPT 生成脚本、完善工作流程 |
 | 1.0 | 2026-04-08 | 初始创建，整合 3 月 -4 月关键记忆 |
 
 ---

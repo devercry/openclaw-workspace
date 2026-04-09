@@ -48,7 +48,23 @@
 
 ---
 
-**最后更新：** 2026-04-08
+**最后更新：** 2026-04-09
+
+---
+
+## 📅 2026-04-09
+
+### [best_practice] 技术新闻摘要自动化
+**时间：** 2026-04-09 10:00
+**场景：** 集成 tech-news-digest 技能（v3.15.0）实现每日科技新闻自动整理
+**内容：** 六源数据收集（RSS、Twitter/X KOLs、GitHub Releases、Trending、Reddit、Web Search）+ 质量评分 + 多格式输出（Markdown/Discord/Email/PDF）
+**应用：** 每日定时运行 `scripts/daily-news-full.sh`，自动生成新闻摘要到 memory/daily-news-YYYY-MM-DD.md
+
+### [workflow] 脚本工具分层设计
+**时间：** 2026-04-09 10:30
+**场景：** 创建 6DoF PPT 生成脚本时发现需要不同复杂度版本
+**内容：** 同一功能提供多个版本：simple（基础版）、tech（技术版）、完整（全功能），满足不同场景需求
+**应用：** 工具脚本设计时考虑用户场景差异，提供渐进式复杂度选项
 
 ---
 

@@ -1,0 +1,97 @@
+<svg width="800" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <!-- Banana gradient -->
+    <linearGradient id="bananaGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#FFE135;stop-opacity:1" />
+      <stop offset="50%" style="stop-color:#FFD700;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#F4C430;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Stem gradient -->
+    <linearGradient id="stemGrad" x1="0%" y1="0%" x2="0%" y2="100%">
+      <stop offset="0%" style="stop-color:#4A5D23;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#6B8E23;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Background gradient -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#f8f9fa;stop-opacity:1" />
+      <stop offset="100%" style="stop-color:#e9ecef;stop-opacity:1" />
+    </linearGradient>
+    
+    <!-- Shadow filter -->
+    <filter id="shadow" x="-50%" y="-50%" width="200%" height="200%">
+      <feDropShadow dx="0" dy="10" stdDeviation="20" flood-opacity="0.2"/>
+    </filter>
+    
+    <!-- Glow for nano effect -->
+    <filter id="nanoGlow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="800" height="800" fill="url(#bgGrad)"/>
+  
+  <!-- Pedestal -->
+  <ellipse cx="400" cy="650" rx="200" ry="40" fill="#d1d5db" opacity="0.5"/>
+  <rect x="300" y="550" width="200" height="100" rx="10" fill="#e5e7eb"/>
+  <ellipse cx="400" cy="550" rx="100" ry="20" fill="#f3f4f6"/>
+  
+  <!-- Nano banana body - stylized curved shape -->
+  <g filter="url(#shadow)" transform="translate(400,400) rotate(-30)">
+    <!-- Main banana curve -->
+    <path d="M -80,60 
+             Q -60,-40 0,-80 
+             Q 60,-120 100,-100
+             Q 80,-40 60,40
+             Q 40,80 -20,90
+             Q -60,80 -80,60 Z" 
+          fill="url(#bananaGrad)" 
+          stroke="#E5B80B" 
+          stroke-width="2"/>
+    
+    <!-- Banana ridges for detail -->
+    <path d="M -50,50 Q -30,-20 10,-60" fill="none" stroke="#E5B80B" stroke-width="1.5" opacity="0.4"/>
+    <path d="M -30,60 Q -10,-10 30,-50" fill="none" stroke="#E5B80B" stroke-width="1.5" opacity="0.3"/>
+    <path d="M -10,70 Q 10,0 50,-40" fill="none" stroke="#E5B80B" stroke-width="1.5" opacity="0.2"/>
+    
+    <!-- Stem -->
+    <path d="M 90,-90 Q 110,-100 120,-110 L 125,-105 Q 115,-95 95,-85 Z" fill="url(#stemGrad)"/>
+    
+    <!-- Nano tech details - circuit-like patterns -->
+    <g filter="url(#nanoGlow)">
+      <circle cx="0" cy="-20" r="8" fill="#00D4FF" opacity="0.6"/>
+      <circle cx="-30" cy="10" r="5" fill="#00D4FF" opacity="0.4"/>
+      <circle cx="40" cy="-50" r="6" fill="#00D4FF" opacity="0.5"/>
+      
+      <!-- Circuit lines -->
+      <path d="M 0,-20 L -30,10" stroke="#00D4FF" stroke-width="1" opacity="0.3"/>
+      <path d="M 0,-20 L 40,-50" stroke="#00D4FF" stroke-width="1" opacity="0.3"/>
+    </g>
+    
+    <!-- Highlight -->
+    <ellipse cx="-40" cy="-30" rx="30" ry="15" fill="#FFF" opacity="0.3" transform="rotate(-30)"/>
+  </g>
+  
+  <!-- Title -->
+  <text x="400" y="120" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="42" font-weight="700" fill="#1a1a1a">NANO BANANA</text>
+  <text x="400" y="165" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="20" fill="#666" font-weight="400">Next-Generation Fruit Technology</text>
+  
+  <!-- Specs -->
+  <g transform="translate(400,720)">
+    <text x="0" y="0" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#999">⚡ Quantum Ripening</text>
+    <text x="0" y="25" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#999">🧬 Enhanced Potassium Matrix</text>
+    <text x="0" y="50" text-anchor="middle" font-family="system-ui, -apple-system, sans-serif" font-size="14" fill="#999">🔬 Lab-Grown Precision</text>
+  </g>
+  
+  <!-- Decorative elements -->
+  <circle cx="150" cy="150" r="60" fill="none" stroke="#FFE135" stroke-width="2" opacity="0.3"/>
+  <circle cx="150" cy="150" r="40" fill="none" stroke="#FFE135" stroke-width="2" opacity="0.2"/>
+  <circle cx="650" cy="650" r="80" fill="none" stroke="#00D4FF" stroke-width="2" opacity="0.15"/>
+  <circle cx="650" cy="650" r="50" fill="none" stroke="#00D4FF" stroke-width="2" opacity="0.1"/>
+</svg>

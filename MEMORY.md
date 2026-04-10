@@ -1,6 +1,6 @@
 # 🧠 MEMORY.md - 核心记忆库
 
-**最后更新：** 2026-04-09 12:00  
+**最后更新：** 2026-04-10 12:00  
 **维护方式：** 每日 12:00 自动反思，提炼 daily notes 中的关键信息
 
 ---
@@ -48,6 +48,12 @@
    - 6DoF PPT 生成器：`scripts/generate-6dof-ppt*.py`（simple/tech 三个版本）
    - 每日自我反思：cron:daily-self-reflection-12pm（12:00 自动执行）
 
+5. **CLI 工具集成**
+   - easier-claude-cli：多模型 CLI 增强版（v2.1.88-dev）
+   - 位置：`/home/tenbox/.openclaw/workspace/easier-claude-cli/`
+   - 配置：阿里云百炼 API（qwen3.5-plus 模型）
+   - 启动脚本：`start-aliyun.sh`（一键启动，自动配置环境变量）
+
 ### 关键配置决策
 - **备份策略：** 使用 git 定期备份 workspace
 - **扩展方式：** 优先使用官方扩展而非复杂依赖安装
@@ -90,6 +96,7 @@
 
 | 版本 | 日期 | 变更摘要 |
 |------|------|----------|
+| 1.2 | 2026-04-10 | 新增 easier-claude-cli 集成、阿里云百炼 API 配置 |
 | 1.1 | 2026-04-09 | 新增 tech-news-digest 系统、6DoF PPT 生成脚本、完善工作流程 |
 | 1.0 | 2026-04-08 | 初始创建，整合 3 月 -4 月关键记忆 |
 

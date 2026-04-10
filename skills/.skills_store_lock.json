@@ -30,6 +30,18 @@
       "zip_url": "https://lightmake.site/api/v1/download?slug=api-gateway",
       "source": "skillhub",
       "version": "1.0.54"
+    },
+    "ai-ppt-generator": {
+      "name": "Ai Ppt Generator",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=ai-ppt-generator",
+      "source": "skillhub",
+      "version": "1.1.2"
+    },
+    "document-pro": {
+      "name": "Document Pro",
+      "zip_url": "https://lightmake.site/api/v1/download?slug=document-pro",
+      "source": "skillhub",
+      "version": "1.0.0"
     }
   }
 }

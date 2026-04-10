@@ -1,0 +1,8 @@
+{
+  "name": "claude-code-runner",
+  "version": "1.0.0",
+  "description": "通过 OpenClaw 调用 Claude Code CLI 执行编程任务",
+  "author": "小爪",
+  "trigger": ["claude code", "claude-code", "让 claude", "用 claude"],
+  "category": "development"
+}

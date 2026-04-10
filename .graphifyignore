@@ -1,0 +1,31 @@
+# Graphify 排除文件
+# 语法同 .gitignore
+
+# 虚拟环境
+venv_*/
+venv/
+.venv/
+
+# Node.js
+node_modules/
+dist/
+build/
+
+# Python 缓存
+__pycache__/
+*.pyc
+*.pyo
+
+# Git
+.git/
+
+# 输出目录
+graphify-out/
+output/
+
+# 大型依赖
+TrainPPTAgent/
+easier-claude-cli/
+
+# 日志
+*.log
